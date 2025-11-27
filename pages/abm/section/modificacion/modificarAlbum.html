@@ -1,0 +1,75 @@
+<div id="modificar_album">
+  <h1>Modificar Albums</h1>
+
+  <h2>Modificar Álbum</h2>
+  <p>Se pueden modificar álbums.</p>
+
+  <form name="modificar_album" class="form_modificar">
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <label>Id del álbum</label>
+      </div>
+      <div>
+        <input type="number" name="id" required min="1" value="1" />
+      </div>
+
+      <div>
+        <label>Nombre del país seleccionado</label>
+      </div>
+      <div>
+        <select name="pais" class="cls_pais"></select>
+      </div>
+    </div>
+
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <label>Clase de álbum</label>
+      </div>
+      <div>
+        <select name="claseAlbum" class="cls_album"></select>
+      </div>
+
+      <div>
+        <label>Precio del álbum</label>
+      </div>
+      <div>
+        <input type="number" name="precio" required min="0" value="0" />
+      </div>
+    </div>
+
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <label>Stock disponible</label>
+      </div>
+      <div>
+        <input type="number" name="stock" required min="0" value="0" />
+      </div>
+
+      <div>
+        <label>Imagen nueva</label>
+      </div>
+      <div>
+        <input
+          type="file"
+          name="imagen"
+          accept="image/*"
+          class="form-control"
+        />
+      </div>
+
+      <div>
+        <button type="submit" class="btn btn-primary btn-modificar">
+          Modificar
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div id="respuesta_modificar_album"></div>
+</div>

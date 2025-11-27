@@ -1,0 +1,156 @@
+<div class="bienvenida">
+  <h2>Datos de usuario</h2>
+
+  <div class="foto_perfil_wrapper"></div>
+  <img
+    src="../../assets/img/icons/btn_camara.png"
+    alt="Modificar"
+    class="camara_icon"
+  />
+</div>
+
+<p>
+  Gestiona tu información, la privacidad y la seguridad para mejorar tu
+  experiencia en FigurApp.
+</p>
+
+<div class="informacion_personal">
+  <div class="form_group">
+    <form class="form_usuario">
+      <div><label>Nombre</label></div>
+      <div>
+        <div>
+          <input type="text" id="nameInput" placeholder="Nombre actual" />
+        </div>
+        <div>
+          <button type="button" id="nameBtn">
+            <img
+              src="../../assets/img/icons/btn_modificar.png"
+              alt="Modificar"
+            />
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <form class="form_usuario">
+      <div><label>Correo Electrónico</label></div>
+      <div>
+        <div>
+          <input type="email" id="emailInput" placeholder="Correo actual" />
+        </div>
+        <div>
+          <button type="button" id="emailBtn">
+            <img
+              src="../../assets/img/icons/btn_modificar.png"
+              alt="Modificar"
+            />
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="form_group">
+    <form class="form_usuario">
+      <div><label>Número de Teléfono</label></div>
+      <div>
+        <div>
+          <input type="tel" id="phoneInput" placeholder="Número actual" />
+        </div>
+        <div>
+          <button type="button" id="phoneBtn">
+            <img
+              src="../../assets/img/icons/btn_modificar.png"
+              alt="Modificar"
+            />
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <form class="form_usuario">
+      <div><label>País de Origen</label></div>
+      <div>
+        <div><select id="countrySelect"></select></div>
+        <div>
+          <button type="button" id="countryBtn">
+            <img
+              src="../../assets/img/icons/btn_modificar.png"
+              alt="Modificar"
+            />
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="form_group">
+    <form class="form_usuario">
+      <div class="form_group">
+        <div><label>Contraseña Actual</label></div>
+        <div>
+          <input
+            type="password"
+            id="currentPasswordInput"
+            placeholder="********"
+          />
+        </div>
+        <div>
+          <div>
+            <input
+              type="password"
+              id="confirmPasswordInput"
+              placeholder="Confirmar contraseña"
+            />
+          </div>
+          <div>
+            <button type="button" id="confirmPasswordBtn">
+              <img
+                src="../../assets/img/icons/btn_modificar.png"
+                alt="Modificar"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="form_group">
+    <form class="form_usuario">
+      <div class="form_group">
+        <div><label>Fecha de Nacimiento</label></div>
+        <div><div id="fechaActual">Fecha actual</div></div>
+        <div>
+          <div><input type="date" id="birthDateInput" /></div>
+          <div>
+            <button type="button" id="birthDateBtn">
+              <img
+                src="../../assets/img/icons/btn_modificar.png"
+                alt="Modificar"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="form_group">
+    <form class="form_usuario">
+      <div><label>Eliminar cuenta</label></div>
+      <div>
+        <div><select id="deleteReason"></select></div>
+        <div>
+          <button type="button" id="deleteBtn">
+            <img
+              src="../../assets/img/icons/btn_alerta.png"
+              alt="Eliminar cuenta"
+            />
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

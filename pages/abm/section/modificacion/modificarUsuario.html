@@ -1,0 +1,102 @@
+<div id="modificar_usuario">
+  <h1>Modificar Usuarios</h1>
+
+  <h2>Modificar Usuario</h2>
+  <p>Se pueden modificar usuarios.</p>
+
+  <form name="modificar_usuario" class="form_modificar">
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <label>Id del usuario</label>
+      </div>
+      <div>
+        <input type="number" name="id" required min="1" value="1" />
+      </div>
+
+      <div>
+        <label>Nombre de usuario</label>
+      </div>
+      <div>
+        <input
+          type="text"
+          name="nombreUsuario"
+          placeholder="(nombre de usuario)"
+          required
+        />
+      </div>
+    </div>
+
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <label>Contraseña</label>
+      </div>
+      <div>
+        <input type="password" name="password" placeholder="*******" required />
+      </div>
+
+      <div>
+        <label>Correo electrónico</label>
+      </div>
+      <div>
+        <input type="email" name="email" placeholder="figusApp@gmail.com" required />
+      </div>
+    </div>
+
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <label>Número de teléfono</label>
+      </div>
+      <div>
+        <input type="tel" name="telefono" placeholder="+5492983547677" required />
+      </div>
+
+      <div>
+        <label>País de origen</label>
+      </div>
+      <div>
+        <select name="pais" class="cls_pais"></select>
+      </div>
+    </div>
+
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <label>Fecha de nacimiento</label>
+      </div>
+      <div>
+        <input type="date" name="fechaNacimiento" required />
+      </div>
+
+      <div>
+        <label>Foto de perfil nueva </label>
+      </div>
+      <div>
+        <input
+          type="file"
+          name="fotoPerfil"
+          accept="image/*"
+          class="form-control"
+        />
+      </div>
+    </div>
+
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <button type="submit" class="btn btn-primary btn-modificar">
+          Modificar
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div id="respuesta_modificar_usuario"></div>
+</div>

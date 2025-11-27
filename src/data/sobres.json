@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "idAlbum": 1,
+    "claseSobre": "Gris",
+    "precio": 500,
+    "stock": 20,
+    "imagen": "/imagenes/sobre_gris.jpg"
+  },
+  {
+    "id": 2,
+    "idAlbum": 2,
+    "claseSobre": "Dorado",
+    "precio": 1200,
+    "stock": 15,
+    "imagen": "/imagenes/sobre_dorado.jpg"
+  },
+  {
+    "id": 3,
+    "idAlbum": 3,
+    "claseSobre": "Premium",
+    "precio": 2000,
+    "stock": 10,
+    "imagen": "/imagenes/sobre_premium.jpg"
+  }
+]

@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url("../../assets/fonts/static/Quicksand-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../../assets/fonts/static/Quicksand-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../../assets/fonts/static/Quicksand-SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../../assets/fonts/static/Quicksand-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+nav img {
+  max-height: 55px;
+}
+
+.navbar {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute !important;
+  text-align: center;
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 4px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.navbar-nav .nav-link:not(.dropdown-toggle)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #ffffff;
+  transition: width 0.4s ease;
+}
+
+input,
+input[type="file"],
+select {
+  border-radius: 6px;
+  padding: 6px;
+  border: 1.5px solid;
+}
+
+input,
+select {
+  width: 190px;
+  height: 35px;
+  padding: 4px 6px;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #696666;
+}
+
+.navbar-nav .nav-link:not(.dropdown-toggle):hover::after {
+  width: 100%;
+}
+
+.navbar-nav .nav-link:not(.dropdown-toggle):hover {
+  font-weight: 700;
+}
+
+@media (max-width: 360px) {
+  .navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .navbar-nav .nav-link:not(.dropdown-toggle)::after {
+    display: none;
+  }
+
+  .navbar-nav .nav-link:not(.dropdown-toggle):hover {
+    font-weight: 400;
+  }
+
+  .navbar-nav .nav-item,
+  .navbar-nav .nav-link {
+    text-align: center;
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,62 @@
+<div id="listar_figuritas">
+  <h1>Listar Figuritas</h1>
+  <h2>Listar Figurita por ID</h2>
+  <p>Se puede buscar una figurita específica indicando su ID.</p>
+
+  <form name="listar_figurita_por_id" class="form_listar">
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <label>Id de la figurita</label>
+      </div>
+      <div>
+        <input type="number" name="id" min="1" required value="1" />
+      </div>
+
+      <div>
+        <button type="submit" class="btn btn-primary btn-listar">Listar</button>
+      </div>
+    </div>
+  </form>
+
+  <div id="respuesta_listar_figurita_por_id"></div>
+
+  <h2>Listar Figuritas por Sobre</h2>
+  <p>
+    Se pueden listar todas las figuritas de un sobre específico indicando el ID
+    del sobre y un límite de resultados.
+  </p>
+
+  <form name="listar_figurita_por_sobre" class="form_listar">
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <label>Id del sobre</label>
+      </div>
+      <div>
+        <input type="number" name="idSobre" min="1" required value="1" />
+      </div>
+
+      <div>
+        <label>Límite de figuritas</label>
+      </div>
+      <div>
+        <input
+          type="number"
+          name="limite_figuritas"
+          min="1"
+          required
+          value="1"
+        />
+      </div>
+
+      <div>
+        <button type="submit" class="btn btn-primary btn-listar">Listar</button>
+      </div>
+    </div>
+  </form>
+
+  <div id="respuesta_listar_figurita_por_sobre"></div>
+</div>

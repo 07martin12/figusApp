@@ -1,0 +1,77 @@
+<div id="agregar_figurita">
+  <h1>Agregar</h1>
+  <h2>Agregar Figurita</h2>
+  <p>Se pueden agregar figuritas indicando el sobre, la clase y sus datos.</p>
+
+  <form name="agregar_figurita" class="form_alta">
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <label>Clase del sobre seleccionado</label>
+      </div>
+      <div>
+        <select name="idSobre" class="cls_sobre"></select>
+      </div>
+
+      <div>
+        <label>Nombre de la figurita</label>
+      </div>
+      <div>
+        <input
+          type="text"
+          name="nombre"
+          required
+          placeholder="(nombre del jugador)"
+        />
+      </div>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3 p-3">
+      <div>
+        <label>Clase de figurita</label>
+      </div>
+      <div>
+        <select name="claseFigurita" class="cls_figurita"></select>
+      </div>
+
+      <div>
+        <label>Precio de figurita</label>
+      </div>
+      <div>
+        <input type="number" name="precio" required value="0" min="0" />
+      </div>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3 p-3">
+      <div>
+        <label>Stock disponible</label>
+      </div>
+      <div>
+        <input type="number" name="stock" required value="0" min="0" />
+      </div>
+
+      <div>
+        <label>Imagen de la figurita</label>
+      </div>
+      <div class="mb-3">
+        <input
+          type="file"
+          name="imagen"
+          accept="image/*"
+          class="form-control"
+        />
+      </div>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3 p-3">
+      <div>
+        <button type="submit" class="btn btn-primary btn-figurita">
+          Agregar
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div id="respuesta_agregar_figurita"></div>
+</div>

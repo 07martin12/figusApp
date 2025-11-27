@@ -1,0 +1,54 @@
+<div id="agregar_sobre">
+  <h1>Agregar</h1>
+  <h2>Agregar Sobre</h2>
+  <p>Se pueden agregar sobres indicando el álbum al que pertenecen.</p>
+
+  <form name="agregar_sobre" class="form_alta">
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <label>Clase del álbum seleccionado</label>
+      </div>
+      <div>
+        <select name="idAlbum" class="cls_album"></select>
+      </div>
+
+      <div>
+        <label>Clase de sobre</label>
+      </div>
+      <div>
+        <select name="claseSobre" class="cls_sobre"></select>
+      </div>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3 p-3">
+      <div>
+        <label>Stock disponible</label>
+      </div>
+      <div>
+        <input type="number" name="stock" required value="0" min="0" />
+      </div>
+
+      <div>
+        <label>Imagen del sobre</label>
+      </div>
+      <div class="mb-3">
+        <input
+          type="file"
+          name="imagen"
+          accept="image/*"
+          class="form-control"
+        />
+      </div>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3 p-3">
+      <div>
+        <button type="submit" class="btn btn-primary btn-sobre">Agregar</button>
+      </div>
+    </div>
+  </form>
+
+  <div id="respuesta_agregar_sobre"></div>
+</div>

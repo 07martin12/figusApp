@@ -1,0 +1,91 @@
+<div id="modificar_figurita">
+  <h1>Modificar Figuritas</h1>
+
+  <h2>Modificar Figurita</h2>
+  <p>Se pueden modificar figuritas.</p>
+
+  <form name="modificar_figurita" class="form_modificar">
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <label>Id de la figurita</label>
+      </div>
+      <div>
+        <input type="number" name="id" required min="1" value="1" />
+      </div>
+
+      <div>
+        <label>Clase del sobre seleccionado</label>
+      </div>
+      <div>
+        <select name="idSobre" class="cls_sobre"></select>
+      </div>
+    </div>
+
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <label>Nombre de la figurita</label>
+      </div>
+      <div>
+        <input
+          type="text"
+          name="nombre"
+          required
+          placeholder="(nombre del jugador)"
+        />
+      </div>
+
+      <div>
+        <label>Clase de figurita</label>
+      </div>
+      <div>
+        <select name="claseFigurita" class="cls_figurita"></select>
+      </div>
+    </div>
+
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <label>Precio de figurita</label>
+      </div>
+      <div>
+        <input type="number" name="precio" required min="0" value="0" />
+      </div>
+
+      <div>
+        <label>Stock disponible</label>
+      </div>
+      <div>
+        <input type="number" name="stock" required min="0" value="0" />
+      </div>
+    </div>
+
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <label>Imagen nueva (opcional)</label>
+      </div>
+      <div>
+        <input
+          type="file"
+          name="imagen"
+          accept="image/*"
+          class="form-control"
+        />
+      </div>
+
+      <div>
+        <button type="submit" class="btn btn-primary btn-modificar">
+          Modificar
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div id="respuesta_modificar_figurita"></div>
+</div>

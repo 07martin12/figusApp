@@ -1,0 +1,24 @@
+<div id="listar_albums">
+  <h1>Listar albums</h1>
+  <h2>Listar Álbum por ID</h2>
+  <p>Se puede buscar un álbum específico indicando su ID.</p>
+
+  <form name="listar_album_por_id" class="form_listar">
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
+    >
+      <div>
+        <label>Id del álbum</label>
+      </div>
+      <div>
+        <input type="number" name="id" required min="1" value="1" />
+      </div>
+  
+      <div>
+        <button type="submit" class="btn btn-primary btn-listar">Listar</button>
+      </div>
+    </div>
+  </form>
+
+  <div id="respuesta_listar_album_por_id"></div>
+</div>

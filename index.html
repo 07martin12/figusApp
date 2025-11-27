@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FigusApp</title>
+
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+
+  <body>
+    <header class="bg-primary">
+      <nav class="navbar navbar-expand-lg navbar-dark container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img
+            src="assets/img/icons/logoPrincipal.png"
+            alt="Logo principal"
+            class="img-fluid logo"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item mx-lg-3">
+              <button class="nav-link text-white btn btn-link" id="tiendaBtn">
+                Tienda 🛒
+              </button>
+            </li>
+
+            <li class="nav-item mx-lg-3">
+              <button
+                class="nav-link text-white btn btn-link"
+                id="billeteraBtn"
+              >
+                Billetera 👜
+              </button>
+            </li>
+
+            <li class="nav-item mx-lg-3">
+              <button class="nav-link text-white btn btn-link" id="ruletaBtn">
+                Ruleta 🎡
+              </button>
+            </li>
+
+            <li class="nav-item mx-lg-3">
+              <a class="nav-link text-white" href="#footer"> Contacto 📞 </a>
+            </li>
+
+            <li class="nav-item mx-lg-3">
+              <button class="nav-link text-white btn btn-link" id="perfilBtn">
+                Perfil 👤
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="mainContent"></main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-top">
+        <h2>Coleccioná la pasión...</h2>
+        <p>FigusApp ® - 2025</p>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>TÉRMINOS Y POLÍTICAS</h3>
+          <ul>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Política de cookies</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>CONTACTANOS</h3>
+          <p>☏ 2983132837</p>
+          <p>✉ FigusApp@hotmail.com</p>
+          <div class="social-icons">
+            <h3>REDES SOCIALES</h3>
+            <img src="/img/face.png" alt="Facebook" />
+            <img src="/img/ig.png" alt="Instagram" />
+            <img src="/img/whatsapp.png" alt="WhatsApp" />
+            <img src="/img/hotmail.png" alt="Hotmail" />
+            <img src="/img/linkedin.png" alt="Linkedin" />
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>DEJANOS UN MENSAJE...</h3>
+          <input type="text" placeholder="Escribí tu mensaje" />
+          <button>Enviar...</button>
+          <div class="imagenes-tecnologias">
+            <img src="/img/images (12)-Photoroom.png" alt="Imagen tecno 2" />
+          </div>
+        </div>
+      </div>
+      <h3 class="titulo-pagos">MEDIOS DE PAGO</h3>
+      <div class="footer-payments">
+        <img src="/img/visa.jpeg" alt="Visa" />
+        <img src="/img/visadeb.jpeg" alt="Visa debito" />
+        <img src="/img/master.jpeg" alt="Mastercard" />
+        <img src="/img/america.jpeg" alt="American Express" />
+        <img src="/img/naranja.jpeg" alt="Naranja" />
+        <img src="/img/pagofacil.jpeg" alt="Pago Fácil" />
+        <img src="/img/rapi.jpeg" alt="Rapipago" />
+        <img src="/img/diner.jpeg" alt="Diners Club" />
+        <img src="/img/cenco.jpeg" alt="Cencosud" />
+      </div>
+    </footer>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

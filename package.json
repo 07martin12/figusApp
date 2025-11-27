@@ -1,0 +1,17 @@
+{
+  "name": "figusapp",
+  "version": "1.0.0",
+  "description": "Aplicación frontend de figusApp desarrollada con TypeScript y Bootstrap",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "start": "echo 'Este proyecto es frontend, no hay servidor para iniciar'"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}

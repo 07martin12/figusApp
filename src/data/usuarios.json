@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "nombreUsuario": "administrador",
+    "password": "admin123",
+    "email": "administrador@gmail.com",
+    "telefono": "5491198765432",
+    "pais": "Argentina",
+    "fechaNacimiento": "2000-03-15",
+    "rol": "admin",
+    "fotoPerfil": "../../assets/img/users/administrador.png"
+  },
+  {
+    "id": 2,
+    "nombreUsuario": "manual",
+    "password": "manual123",
+    "email": "manual@gmail.com",
+    "telefono": "5491191234567",
+    "pais": "Argentina",
+    "fechaNacimiento": "2001-06-22",
+    "rol": "usuario",
+    "fotoPerfil": "../../assets/img/users/manual.png"
+  },
+  {
+    "id": 3,
+    "nombreUsuario": "lautaro",
+    "password": "lautaro123",
+    "email": "lautaro@gmail.com",
+    "telefono": "5491192345678",
+    "pais": "Argentina",
+    "fechaNacimiento": "2002-08-10",
+    "rol": "usuario",
+    "fotoPerfil": "../../assets/img/users/lautaro.png"
+  },
+  {
+    "id": 4,
+    "nombreUsuario": "martin",
+    "password": "martin123",
+    "email": "martin@gmail.com",
+    "telefono": "5491193456789",
+    "pais": "Argentina",
+    "fechaNacimiento": "2003-12-05",
+    "rol": "usuario",
+    "fotoPerfil": "../../assets/img/users/martin.png"
+  },
+  {
+    "id": 5,
+    "nombreUsuario": "usuarioTemporal",
+    "password": "temporal123",
+    "email": "temporal@gmail.com",
+    "telefono": "5491199876543",
+    "pais": "Argentina",
+    "fechaNacimiento": "2004-01-01",
+    "rol": "usuario",
+    "fotoPerfil": "../assets/img/icons/fotoPerfilDefault.png"
+  }
+]
