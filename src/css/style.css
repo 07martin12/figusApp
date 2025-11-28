@@ -27,6 +27,10 @@
   font-style: normal;
 }
 
+* {
+  font-family: "Quicksand", sans-serif !important;
+}
+
 nav img {
   max-height: 55px;
 }

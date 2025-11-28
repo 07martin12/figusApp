@@ -9,6 +9,11 @@
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+
     <link rel="stylesheet" href="src/css/style.css" />
   </head>
 
@@ -71,56 +76,151 @@
 
     <main id="mainContent"></main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-top">
-        <h2>Coleccioná la pasión...</h2>
-        <p>FigusApp ® - 2025</p>
-      </div>
+    <footer
+      id="footer"
+      class="bg-primary text-white"
+      style="margin: 0; padding: 2rem"
+    >
+      <div class="container">
+        <div class="row gy-4 justify-content-between">
+          <div class="col-lg-4 col-md-6">
+            <h5 class="fw-bold">Colecciona la pasión...</h5>
+            <p class="small mt-2">© 2025 - Actualidad | FigusApp</p>
 
-      <div class="footer-content">
-        <div class="footer-column">
-          <h3>TÉRMINOS Y POLÍTICAS</h3>
-          <ul>
-            <li><a href="#">Términos y condiciones</a></li>
-            <li><a href="#">Política de privacidad</a></li>
-            <li><a href="#">Política de cookies</a></li>
-          </ul>
-        </div>
+            <h6 class="fw-bold mt-4">Legal</h6>
+            <ul class="list-unstyled mt-2">
+              <li>
+                <a
+                  href="https://en.wikipedia.org/wiki/Terms_of_service"
+                  target="_blank"
+                  class="text-white text-decoration-none"
+                  >Términos de Servicio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://es.wikipedia.org/wiki/Pol%C3%ADtica_de_privacidad"
+                  target="_blank"
+                  class="text-white text-decoration-none"
+                  >Política de Privacidad</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://es.wikipedia.org/wiki/Cookie_(inform%C3%A1tica)"
+                  target="_blank"
+                  class="text-white text-decoration-none"
+                  >Política de Cookies</a
+                >
+              </li>
+            </ul>
 
-        <div class="footer-column">
-          <h3>CONTACTANOS</h3>
-          <p>☏ 2983132837</p>
-          <p>✉ FigusApp@hotmail.com</p>
-          <div class="social-icons">
-            <h3>REDES SOCIALES</h3>
-            <img src="/img/face.png" alt="Facebook" />
-            <img src="/img/ig.png" alt="Instagram" />
-            <img src="/img/whatsapp.png" alt="WhatsApp" />
-            <img src="/img/hotmail.png" alt="Hotmail" />
-            <img src="/img/linkedin.png" alt="Linkedin" />
+            <h6 class="fw-bold mt-4">Tecnologías utilizadas</h6>
+            <div class="d-flex gap-3 mt-3">
+              <img src="assets/img/tech/html.png" alt="HTML" width="40" />
+              <img src="assets/img/tech/css.png" alt="CSS" width="40" />
+              <img
+                src="assets/img/tech/typescript.png"
+                alt="TypeScript"
+                width="40"
+              />
+              <img
+                src="assets/img/tech/bootstrap.png"
+                alt="Bootstrap"
+                width="40"
+              />
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+            <form class="w-100" style="max-width: 350px">
+              <h6 class="fw-bold text-center mb-3">Consultas</h6>
+              <select class="form-select mb-2" required>
+                <option value="" selected disabled>
+                  Motivo de la consulta
+                </option>
+                <option value="soporte">Soporte</option>
+                <option value="compras">Problemas con compras</option>
+                <option value="sugerencias">Sugerencias</option>
+              </select>
+
+              <input
+                type="email"
+                class="form-control mb-2"
+                placeholder="Tu correo"
+                required
+              />
+
+              <textarea
+                class="form-control mb-2"
+                rows="3"
+                placeholder="Escribe tu consulta..."
+                required
+              ></textarea>
+
+              <button
+                id="btnEnviarConsulta"
+                class="btn btn-light w-100 fw-bold"
+                type="submit"
+              >
+                Enviar
+              </button>
+
+              <div class="d-flex gap-3 mt-3 justify-content-center">
+                <a href="https://wa.me/" target="_blank" class="text-white fs-4"
+                  ><i class="bi bi-whatsapp"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  class="text-white fs-4"
+                  ><i class="bi bi-instagram"></i
+                ></a>
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  class="text-white fs-4"
+                  ><i class="bi bi-facebook"></i
+                ></a>
+                <a href="mailto:" target="_blank" class="text-white fs-4"
+                  ><i class="bi bi-envelope"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  class="text-white fs-4"
+                  ><i class="bi bi-linkedin"></i
+                ></a>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-lg-4 col-md-12 text-end">
+            <h6 class="fw-bold">Métodos de Pago</h6>
+            <div class="d-flex justify-content-end flex-wrap gap-3 mt-3">
+              <img
+                src="assets/img/icons/pagos/visa.png"
+                alt="Visa"
+                width="45"
+              />
+              <img
+                src="assets/img/icons/pagos/mastercard.png"
+                alt="Mastercard"
+                width="45"
+              />
+              <img
+                src="assets/img/icons/pagos/paypal.png"
+                alt="PayPal"
+                width="45"
+              />
+              <img
+                src="assets/img/icons/pagos/mercadopago.png"
+                alt="MercadoPago"
+                width="45"
+              />
+            </div>
           </div>
         </div>
-
-        <div class="footer-column">
-          <h3>DEJANOS UN MENSAJE...</h3>
-          <input type="text" placeholder="Escribí tu mensaje" />
-          <button>Enviar...</button>
-          <div class="imagenes-tecnologias">
-            <img src="/img/images (12)-Photoroom.png" alt="Imagen tecno 2" />
-          </div>
-        </div>
-      </div>
-      <h3 class="titulo-pagos">MEDIOS DE PAGO</h3>
-      <div class="footer-payments">
-        <img src="/img/visa.jpeg" alt="Visa" />
-        <img src="/img/visadeb.jpeg" alt="Visa debito" />
-        <img src="/img/master.jpeg" alt="Mastercard" />
-        <img src="/img/america.jpeg" alt="American Express" />
-        <img src="/img/naranja.jpeg" alt="Naranja" />
-        <img src="/img/pagofacil.jpeg" alt="Pago Fácil" />
-        <img src="/img/rapi.jpeg" alt="Rapipago" />
-        <img src="/img/diner.jpeg" alt="Diners Club" />
-        <img src="/img/cenco.jpeg" alt="Cencosud" />
       </div>
     </footer>
 

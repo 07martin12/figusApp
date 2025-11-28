@@ -1,91 +1,104 @@
-<div id="modificar_figurita">
-  <h1>Modificar Figuritas</h1>
-
-  <h2>Modificar Figurita</h2>
-  <p>Se pueden modificar figuritas.</p>
+<div class="card bg-light border rounded p-4 mb-4">
+  <h5 class="card-title mb-3">Modificar Figurita</h5>
+  <p class="card-text mb-3">Se pueden modificar figuritas.</p>
 
   <form name="modificar_figurita" class="form_modificar">
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Id de la figurita</label>
-      </div>
-      <div>
-        <input type="number" name="id" required min="1" value="1" />
-      </div>
-
-      <div>
-        <label>Clase del sobre seleccionado</label>
-      </div>
-      <div>
-        <select name="idSobre" class="cls_sobre"></select>
-      </div>
+    <div class="mb-3">
+      <label for="inputModificarFiguId" class="form-label"
+        >ID de la figurita</label
+      >
+      <input
+        type="number"
+        id="inputModificarFiguId"
+        name="id"
+        class="form-control w-100"
+        required
+        min="1"
+        value="1"
+      />
     </div>
 
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Nombre de la figurita</label>
-      </div>
-      <div>
-        <input
-          type="text"
-          name="nombre"
-          required
-          placeholder="(nombre del jugador)"
-        />
-      </div>
-
-      <div>
-        <label>Clase de figurita</label>
-      </div>
-      <div>
-        <select name="claseFigurita" class="cls_figurita"></select>
-      </div>
+    <div class="mb-3">
+      <label for="selectModificarSobre" class="form-label"
+        >Clase del sobre seleccionado</label
+      >
+      <select
+        id="selectModificarSobre"
+        name="idSobre"
+        class="form-select w-100 cls_sobre"
+      ></select>
     </div>
 
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Precio de figurita</label>
-      </div>
-      <div>
-        <input type="number" name="precio" required min="0" value="0" />
-      </div>
-
-      <div>
-        <label>Stock disponible</label>
-      </div>
-      <div>
-        <input type="number" name="stock" required min="0" value="0" />
-      </div>
+    <div class="mb-3">
+      <label for="inputModificarNombre" class="form-label"
+        >Nombre de la figurita</label
+      >
+      <input
+        type="text"
+        id="inputModificarNombre"
+        name="nombre"
+        class="form-control w-100"
+        required
+        placeholder="(nombre del jugador)"
+      />
     </div>
 
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Imagen nueva (opcional)</label>
-      </div>
-      <div>
-        <input
-          type="file"
-          name="imagen"
-          accept="image/*"
-          class="form-control"
-        />
-      </div>
-
-      <div>
-        <button type="submit" class="btn btn-primary btn-modificar">
-          Modificar
-        </button>
-      </div>
+    <div class="mb-3">
+      <label for="selectModificarClaseFig" class="form-label"
+        >Clase de figurita</label
+      >
+      <select
+        id="selectModificarClaseFig"
+        name="claseFigurita"
+        class="form-select w-100 cls_figurita"
+      ></select>
     </div>
+
+    <div class="mb-3">
+      <label for="inputModificarPrecioFigu" class="form-label"
+        >Precio de figurita</label
+      >
+      <input
+        type="number"
+        id="inputModificarPrecioFigu"
+        name="precio"
+        class="form-control w-100"
+        required
+        min="0"
+        value="0"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="inputModificarStockFigu" class="form-label"
+        >Stock disponible</label
+      >
+      <input
+        type="range"
+        id="inputModificarStockFigu"
+        name="stock"
+        class="form-range w-100"
+        min="0"
+        max="100"
+        value="0"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="inputModificarImagenFigu" class="form-label"
+        >Imagen nueva</label
+      >
+      <input
+        type="file"
+        id="inputModificarImagenFigu"
+        name="imagen"
+        accept="image/*"
+        class="form-control w-100"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Modificar</button>
   </form>
 
-  <div id="respuesta_modificar_figurita"></div>
+  <div id="respuesta_modificar_figurita" class="mt-2"></div>
 </div>

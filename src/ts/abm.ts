@@ -73,6 +73,7 @@ Object.keys(rutas).forEach((id) => {
       mainPanel.innerHTML = html;
 
       cargarSelects();
+      mostrarValoresRange();
 
       const forms = document.querySelectorAll<HTMLFormElement>("form");
       desactivarForms(forms);
@@ -102,6 +103,29 @@ const cargarOption = (select: HTMLSelectElement, array: string[]): void => {
     option.value = v;
     option.textContent = v;
     select.appendChild(option);
+  });
+};
+
+const mostrarValoresRange = (): void => {
+  const ranges = document.querySelectorAll<HTMLInputElement>(
+    'input[type="range"]'
+  );
+
+  ranges.forEach((range) => {
+    const container = range.parentElement!;
+    let span = container.querySelector<HTMLSpanElement>(".range-value");
+    if (!span) {
+      span = document.createElement("span");
+      span.classList.add("range-value");
+      span.style.marginLeft = "8px"; 
+      container.insertBefore(span, range); 
+    }
+
+    span.textContent = range.value;
+
+    range.addEventListener("input", () => {
+      span!.textContent = range.value;
+    });
   });
 };
 

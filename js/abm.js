@@ -58,6 +58,7 @@ Object.keys(rutas).forEach((id) => {
             const html = await response.text();
             mainPanel.innerHTML = html;
             cargarSelects();
+            mostrarValoresRange();
             const forms = document.querySelectorAll("form");
             desactivarForms(forms);
         }
@@ -84,6 +85,23 @@ const cargarOption = (select, array) => {
         option.value = v;
         option.textContent = v;
         select.appendChild(option);
+    });
+};
+const mostrarValoresRange = () => {
+    const ranges = document.querySelectorAll('input[type="range"]');
+    ranges.forEach((range) => {
+        const container = range.parentElement;
+        let span = container.querySelector(".range-value");
+        if (!span) {
+            span = document.createElement("span");
+            span.classList.add("range-value");
+            span.style.marginLeft = "8px";
+            container.insertBefore(span, range);
+        }
+        span.textContent = range.value;
+        range.addEventListener("input", () => {
+            span.textContent = range.value;
+        });
     });
 };
 const desactivarForms = (forms) => {

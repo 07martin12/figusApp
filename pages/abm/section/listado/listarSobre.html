@@ -1,56 +1,74 @@
-<div id="listar_sobres">
-  <h1>Listar Sobres</h1>
+<div class="card bg-light border rounded p-3 mb-4">
+  <h5 class="card-title mb-3">Listar Sobres</h5>
 
-  <h2>Listar Sobre por ID</h2>
-  <p>Se puede buscar un sobre específico indicando su ID.</p>
+  <div class="mb-3">
+    <p class="card-text mb-2">
+      Se puede buscar un sobre específico indicando su ID.
+    </p>
+    <form name="listar_sobre_por_id" class="form_listar">
+      <div class="d-flex flex-wrap gap-3 align-items-center">
+        <div class="w-100 w-md-auto">
+          <label for="inputSobreId" class="form-label">ID del sobre</label>
+          <input
+            type="number"
+            id="inputSobreId"
+            name="id"
+            class="form-control"
+            min="1"
+            required
+            value="1"
+          />
+        </div>
+        <div class="mt-2 mt-md-0">
+          <button type="submit" class="btn btn-primary">Buscar Sobre</button>
+        </div>
+      </div>
+    </form>
+    <div id="respuesta_listar_sobre_por_id" class="mt-2"></div>
+  </div>
 
-  <form name="listar_sobre_por_id" class="form_listar">
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Id del sobre</label>
-      </div>
-      <div>
-        <input type="number" name="id" required min="1" value="1" />
-      </div>
-      <div>
-        <button type="submit" class="btn btn-primary btn-listar">Listar</button>
-      </div>
-    </div>
-  </form>
+  <hr class="my-3" />
 
-  <div id="respuesta_listar_sobre_por_id"></div>
+  <div>
+    <p class="card-text mb-2">
+      Se pueden listar todos los sobres pertenecientes a un álbum específico,
+      indicando su ID y un límite de resultados.
+    </p>
+    <form name="listar_sobre_por_album" class="form_listar">
+      <div class="d-flex flex-wrap gap-3 align-items-center">
+        <div class="w-100 w-md-auto">
+          <label for="inputAlbumId" class="form-label">ID del álbum</label>
+          <input
+            type="number"
+            id="inputAlbumId"
+            name="idAlbum"
+            class="form-control"
+            min="1"
+            required
+            value="1"
+          />
+        </div>
 
-  <h2>Listar Sobres por Álbum</h2>
-  <p>
-    Se pueden listar todos los sobres pertenecientes a un álbum específico,
-    indicando su ID y un límite de resultados.
-  </p>
+        <div class="w-100 w-md-auto">
+          <label for="inputLimiteSobres" class="form-label"
+            >Límite de sobres</label
+          >
+          <input
+            type="range"
+            class="form-range"
+            id="inputLimiteSobres"
+            name="limite_sobres"
+            min="1"
+            max="50"
+            value="5"
+          />
+        </div>
 
-  <form name="listar_sobre_por_album" class="form_listar">
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Id del álbum</label>
+        <div class="mt-2 mt-md-0">
+          <button type="submit" class="btn btn-primary">Listar Sobres</button>
+        </div>
       </div>
-      <div>
-        <input type="number" name="idAlbum" required min="1" value="1" />
-      </div>
-
-      <div>
-        <label>Límite de sobres</label>
-      </div>
-      <div>
-        <input type="number" name="limite_sobres" required min="1" value="1" />
-      </div>
-   
-      <div>
-        <button type="submit" class="btn btn-primary btn-listar">Listar</button>
-      </div>
-    </div>
-  </form>
-
-  <div id="respuesta_listar_sobre_por_album"></div>
+    </form>
+    <div id="respuesta_listar_sobre_por_album" class="mt-2"></div>
+  </div>
 </div>

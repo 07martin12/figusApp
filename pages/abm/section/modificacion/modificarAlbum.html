@@ -1,75 +1,86 @@
-<div id="modificar_album">
-  <h1>Modificar Albums</h1>
-
-  <h2>Modificar Álbum</h2>
-  <p>Se pueden modificar álbums.</p>
+<div class="card bg-light border rounded p-4 mb-4">
+  <h5 class="card-title mb-3">Modificar Álbum</h5>
+  <p class="card-text mb-3">Se pueden modificar álbumes.</p>
 
   <form name="modificar_album" class="form_modificar">
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Id del álbum</label>
-      </div>
-      <div>
-        <input type="number" name="id" required min="1" value="1" />
-      </div>
-
-      <div>
-        <label>Nombre del país seleccionado</label>
-      </div>
-      <div>
-        <select name="pais" class="cls_pais"></select>
-      </div>
+    <div class="mb-3">
+      <label for="inputModificarAlbumId" class="form-label">ID del álbum</label>
+      <input
+        type="number"
+        id="inputModificarAlbumId"
+        name="id"
+        class="form-control w-100"
+        required
+        min="1"
+        value="1"
+      />
     </div>
 
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Clase de álbum</label>
-      </div>
-      <div>
-        <select name="claseAlbum" class="cls_album"></select>
-      </div>
-
-      <div>
-        <label>Precio del álbum</label>
-      </div>
-      <div>
-        <input type="number" name="precio" required min="0" value="0" />
-      </div>
+    <div class="mb-3">
+      <label for="selectModificarPais" class="form-label"
+        >Nombre del país seleccionado</label
+      >
+      <select
+        id="selectModificarPais"
+        name="pais"
+        class="form-select w-100 cls_pais"
+      ></select>
     </div>
 
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Stock disponible</label>
-      </div>
-      <div>
-        <input type="number" name="stock" required min="0" value="0" />
-      </div>
-
-      <div>
-        <label>Imagen nueva</label>
-      </div>
-      <div>
-        <input
-          type="file"
-          name="imagen"
-          accept="image/*"
-          class="form-control"
-        />
-      </div>
-
-      <div>
-        <button type="submit" class="btn btn-primary btn-modificar">
-          Modificar
-        </button>
-      </div>
+    <div class="mb-3">
+      <label for="selectModificarClase" class="form-label"
+        >Clase de álbum</label
+      >
+      <select
+        id="selectModificarClase"
+        name="claseAlbum"
+        class="form-select w-100 cls_album"
+      ></select>
     </div>
+
+    <div class="mb-3">
+      <label for="inputModificarPrecio" class="form-label"
+        >Precio del álbum</label
+      >
+      <input
+        type="number"
+        id="inputModificarPrecio"
+        name="precio"
+        class="form-control w-100"
+        required
+        min="0"
+        value="0"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="inputModificarStock" class="form-label"
+        >Stock disponible</label
+      >
+      <input
+        type="range"
+        id="inputModificarStock"
+        name="stock"
+        class="form-range w-100"
+        min="0"
+        max="100"
+        value="0"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="inputModificarImagen" class="form-label">Imagen nueva</label>
+      <input
+        type="file"
+        id="inputModificarImagen"
+        name="imagen"
+        accept="image/*"
+        class="form-control w-100"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Modificar</button>
   </form>
 
-  <div id="respuesta_modificar_album"></div>
+  <div id="respuesta_modificar_album" class="mt-2"></div>
 </div>

@@ -1,54 +1,58 @@
-<div id="agregar_sobre">
-  <h1>Agregar</h1>
-  <h2>Agregar Sobre</h2>
-  <p>Se pueden agregar sobres indicando el álbum al que pertenecen.</p>
+<div class="card bg-light border rounded p-4 mb-4">
+  <h5 class="card-title mb-3">Agregar Sobre</h5>
+  <p class="card-text mb-3">
+    Se pueden agregar sobres indicando el álbum al que pertenecen.
+  </p>
 
   <form name="agregar_sobre" class="form_alta">
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Clase del álbum seleccionado</label>
-      </div>
-      <div>
-        <select name="idAlbum" class="cls_album"></select>
-      </div>
-
-      <div>
-        <label>Clase de sobre</label>
-      </div>
-      <div>
-        <select name="claseSobre" class="cls_sobre"></select>
-      </div>
+    <div class="mb-3">
+      <label for="selectAlbum" class="form-label"
+        >Clase del álbum seleccionado</label
+      >
+      <select
+        id="selectAlbum"
+        name="idAlbum"
+        class="form-select w-100 cls_album"
+      ></select>
     </div>
 
-    <div class="d-flex flex-wrap justify-content-center gap-3 p-3">
-      <div>
-        <label>Stock disponible</label>
-      </div>
-      <div>
-        <input type="number" name="stock" required value="0" min="0" />
-      </div>
-
-      <div>
-        <label>Imagen del sobre</label>
-      </div>
-      <div class="mb-3">
-        <input
-          type="file"
-          name="imagen"
-          accept="image/*"
-          class="form-control"
-        />
-      </div>
+    <div class="mb-3">
+      <label for="selectClaseSobre" class="form-label">Clase de sobre</label>
+      <select
+        id="selectClaseSobre"
+        name="claseSobre"
+        class="form-select w-100 cls_sobre"
+      ></select>
     </div>
 
-    <div class="d-flex flex-wrap justify-content-center gap-3 p-3">
-      <div>
-        <button type="submit" class="btn btn-primary btn-sobre">Agregar</button>
-      </div>
+    <div class="mb-3">
+      <label for="inputStockSobre" class="form-label">Stock disponible</label>
+      <input
+        type="range"
+        id="inputStockSobre"
+        name="stock"
+        class="form-range w-100"
+        min="0"
+        max="100"
+        value="5"
+      />
     </div>
+
+    <div class="mb-3">
+      <label for="inputImagenSobre" class="form-label">Imagen del sobre</label>
+      <input
+        type="file"
+        id="inputImagenSobre"
+        name="imagen"
+        accept="image/*"
+        class="form-control w-100"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2 btn-sobre">
+      Agregar
+    </button>
   </form>
 
-  <div id="respuesta_agregar_sobre"></div>
+  <div id="respuesta_agregar_sobre" class="mt-2"></div>
 </div>

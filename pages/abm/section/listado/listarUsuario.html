@@ -1,25 +1,29 @@
-<div id="listar_usuarios">
-  <h1>Listar Usuarios</h1>
+<div class="card bg-light border rounded p-3 mb-4">
+  <h5 class="card-title mb-3">Listar Usuarios</h5>
 
-  <h2>Listar Usuario por ID</h2>
-  <p>Se puede buscar un usuario específico indicando su ID.</p>
-
-  <form name="listar_usuario_por_id" class="form_listar">
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Id del usuario</label>
+  <div class="mb-3">
+    <p class="card-text mb-2">
+      Se puede buscar un usuario específico indicando su ID.
+    </p>
+    <form name="listar_usuario_por_id" class="form_listar">
+      <div class="d-flex flex-wrap gap-3 align-items-center">
+        <div class="w-100 w-md-auto">
+          <label for="inputUsuarioId" class="form-label">ID del usuario</label>
+          <input
+            type="number"
+            id="inputUsuarioId"
+            name="id"
+            class="form-control"
+            min="1"
+            required
+            value="1"
+          />
+        </div>
+        <div class="mt-2 mt-md-0">
+          <button type="submit" class="btn btn-primary">Buscar Usuario</button>
+        </div>
       </div>
-      <div>
-        <input type="number" name="id" required min="1" value="1" />
-      </div>
-    
-      <div>
-        <button type="submit" class="btn btn-primary btn-listar">Listar</button>
-      </div>
-    </div>
-  </form>
-
-  <div id="respuesta_listar_usuario_por_id"></div>
+    </form>
+    <div id="respuesta_listar_usuario_por_id" class="mt-2"></div>
+  </div>
 </div>

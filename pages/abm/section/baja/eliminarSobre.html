@@ -1,26 +1,24 @@
-<div id="eliminar_sobre">
-  <h1>Eliminar</h1>
-  <h2>Eliminar Sobre</h2>
-  <p>Se pueden eliminar sobres por ID.</p>
+<div class="card bg-light border rounded p-4 mb-4">
+  <h5 class="card-title mb-3">Eliminar Sobre</h5>
+  <p class="card-text mb-3">Se pueden eliminar sobres por ID.</p>
 
   <form name="eliminar_sobre" class="form_eliminar">
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Id del sobre</label>
-      </div>
-      <div>
-        <input type="number" name="id" required value="1" />
-      </div>
-
-      <div>
-        <button type="submit" class="btn btn-danger btn-eliminar">
-          Eliminar
-        </button>
-      </div>
+    <div class="mb-3">
+      <label for="inputEliminarSobreId" class="form-label">ID del sobre</label>
+      <input
+        type="number"
+        id="inputEliminarSobreId"
+        name="id"
+        class="form-control w-100"
+        required
+        value="1"
+      />
     </div>
+
+    <button type="submit" class="btn btn-danger mt-2 btn-eliminar">
+      Eliminar
+    </button>
   </form>
 
-  <div id="respuesta_eliminar_sobre"></div>
+  <div id="respuesta_eliminar_sobre" class="mt-2"></div>
 </div>

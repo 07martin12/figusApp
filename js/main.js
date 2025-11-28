@@ -2,6 +2,20 @@ const perfilBtn = document.getElementById("perfilBtn");
 const ruletaBtn = document.getElementById("ruletaBtn");
 const billeteraBtn = document.getElementById("billeteraBtn");
 const mainContent = document.getElementById("mainContent");
+const btnEnviarConsulta = document.getElementById("btnEnviarConsulta");
+btnEnviarConsulta?.addEventListener("click", (e) => {
+    e.preventDefault();
+    const form = btnEnviarConsulta.closest("form");
+    if (!form)
+        return;
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+    const alertDiv = document.createElement("div");
+    alertDiv.innerHTML = showSuccessMessage();
+    form.prepend(alertDiv);
+});
 perfilBtn?.addEventListener("click", async () => {
     try {
         const response = await fetch("../pages/abm/abm.html");
@@ -43,8 +57,8 @@ billeteraBtn?.addEventListener("click", async () => {
             throw new Error(`HTTP ${response.status}`);
         const html = await response.text();
         mainContent.innerHTML = html;
-        const cssOk = await loadCss("../src/css/billetera.css", "data-billetera-css");
-        const jsOk = await loadJs("../js/billetera.js", "data-billetera-js");
+        const cssOk = await loadCss("../src/css/album.css", "data-billetera-css");
+        const jsOk = await loadJs("../js/album.js", "data-billetera-js");
         if (!cssOk || !jsOk) {
             console.log("Hubo errores cargando archivos CSS o JS de la billetera.");
         }
@@ -88,6 +102,14 @@ export function showErrorMessage(message) {
       <p>Ocurrió un problema al procesar la solicitud.</p>
       <hr>
       <p class="mb-0"><strong>Detalle:</strong> ${message}</p>
+    </div>
+  `;
+}
+export function showSuccessMessage() {
+    return `
+    <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+      ¡Gracias por tu consulta! Nos pondremos en contacto pronto.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   `;
 }

@@ -1,102 +1,114 @@
-<div id="modificar_usuario">
-  <h1>Modificar Usuarios</h1>
-
-  <h2>Modificar Usuario</h2>
-  <p>Se pueden modificar usuarios.</p>
+<div class="card bg-light border rounded p-4 mb-4">
+  <h5 class="card-title mb-3">Modificar Usuario</h5>
+  <p class="card-text mb-3">Se pueden modificar usuarios.</p>
 
   <form name="modificar_usuario" class="form_modificar">
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Id del usuario</label>
-      </div>
-      <div>
-        <input type="number" name="id" required min="1" value="1" />
-      </div>
-
-      <div>
-        <label>Nombre de usuario</label>
-      </div>
-      <div>
-        <input
-          type="text"
-          name="nombreUsuario"
-          placeholder="(nombre de usuario)"
-          required
-        />
-      </div>
+    <div class="mb-3">
+      <label for="inputModificarUsuarioId" class="form-label"
+        >ID del usuario</label
+      >
+      <input
+        type="number"
+        id="inputModificarUsuarioId"
+        name="id"
+        class="form-control w-100"
+        required
+        min="1"
+        value="1"
+      />
     </div>
 
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Contraseña</label>
-      </div>
-      <div>
-        <input type="password" name="password" placeholder="*******" required />
-      </div>
-
-      <div>
-        <label>Correo electrónico</label>
-      </div>
-      <div>
-        <input type="email" name="email" placeholder="figusApp@gmail.com" required />
-      </div>
+    <div class="mb-3">
+      <label for="inputModificarNombreUsuario" class="form-label"
+        >Nombre de usuario</label
+      >
+      <input
+        type="text"
+        id="inputModificarNombreUsuario"
+        name="nombreUsuario"
+        class="form-control w-100"
+        placeholder="(nombre de usuario)"
+        required
+      />
     </div>
 
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Número de teléfono</label>
-      </div>
-      <div>
-        <input type="tel" name="telefono" placeholder="+5492983547677" required />
-      </div>
-
-      <div>
-        <label>País de origen</label>
-      </div>
-      <div>
-        <select name="pais" class="cls_pais"></select>
-      </div>
+    <div class="mb-3">
+      <label for="inputModificarPassword" class="form-label">Contraseña</label>
+      <input
+        type="password"
+        id="inputModificarPassword"
+        name="password"
+        class="form-control w-100"
+        placeholder="*******"
+        required
+      />
     </div>
 
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Fecha de nacimiento</label>
-      </div>
-      <div>
-        <input type="date" name="fechaNacimiento" required />
-      </div>
-
-      <div>
-        <label>Foto de perfil nueva </label>
-      </div>
-      <div>
-        <input
-          type="file"
-          name="fotoPerfil"
-          accept="image/*"
-          class="form-control"
-        />
-      </div>
+    <div class="mb-3">
+      <label for="inputModificarEmail" class="form-label"
+        >Correo electrónico</label
+      >
+      <input
+        type="email"
+        id="inputModificarEmail"
+        name="email"
+        class="form-control w-100"
+        placeholder="figusApp@gmail.com"
+        required
+      />
     </div>
 
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <button type="submit" class="btn btn-primary btn-modificar">
-          Modificar
-        </button>
-      </div>
+    <div class="mb-3">
+      <label for="inputModificarTelefono" class="form-label"
+        >Número de teléfono</label
+      >
+      <input
+        type="tel"
+        id="inputModificarTelefono"
+        name="telefono"
+        class="form-control w-100"
+        placeholder="+5492983547677"
+        required
+      />
     </div>
+
+    <div class="mb-3">
+      <label for="selectModificarPais" class="form-label">País de origen</label>
+      <select
+        id="selectModificarPais"
+        name="pais"
+        class="form-select w-100 cls_pais"
+      ></select>
+    </div>
+
+    <div class="mb-3">
+      <label for="inputModificarFechaNacimiento" class="form-label"
+        >Fecha de nacimiento</label
+      >
+      <input
+        type="date"
+        id="inputModificarFechaNacimiento"
+        name="fechaNacimiento"
+        class="form-control w-100"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="inputModificarFotoPerfil" class="form-label"
+        >Foto de perfil nueva</label
+      >
+      <input
+        type="file"
+        id="inputModificarFotoPerfil"
+        name="fotoPerfil"
+        accept="image/*"
+        class="form-control w-100"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Modificar</button>
   </form>
 
-  <div id="respuesta_modificar_usuario"></div>
+  <div id="respuesta_modificar_usuario" class="mt-2"></div>
 </div>

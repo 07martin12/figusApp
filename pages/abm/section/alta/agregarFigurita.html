@@ -1,77 +1,89 @@
-<div id="agregar_figurita">
-  <h1>Agregar</h1>
-  <h2>Agregar Figurita</h2>
-  <p>Se pueden agregar figuritas indicando el sobre, la clase y sus datos.</p>
+<div class="card bg-light border rounded p-4 mb-4">
+  <h5 class="card-title mb-3">Agregar Figurita</h5>
+  <p class="card-text mb-3">
+    Se pueden agregar figuritas indicando el sobre, la clase y sus datos.
+  </p>
 
   <form name="agregar_figurita" class="form_alta">
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Clase del sobre seleccionado</label>
-      </div>
-      <div>
-        <select name="idSobre" class="cls_sobre"></select>
-      </div>
-
-      <div>
-        <label>Nombre de la figurita</label>
-      </div>
-      <div>
-        <input
-          type="text"
-          name="nombre"
-          required
-          placeholder="(nombre del jugador)"
-        />
-      </div>
+    <div class="mb-3">
+      <label for="selectSobre" class="form-label"
+        >Clase del sobre seleccionado</label
+      >
+      <select
+        id="selectSobre"
+        name="idSobre"
+        class="form-select w-100 cls_sobre"
+      ></select>
     </div>
 
-    <div class="d-flex flex-wrap justify-content-center gap-3 p-3">
-      <div>
-        <label>Clase de figurita</label>
-      </div>
-      <div>
-        <select name="claseFigurita" class="cls_figurita"></select>
-      </div>
-
-      <div>
-        <label>Precio de figurita</label>
-      </div>
-      <div>
-        <input type="number" name="precio" required value="0" min="0" />
-      </div>
+    <div class="mb-3">
+      <label for="inputNombre" class="form-label">Nombre de la figurita</label>
+      <input
+        type="text"
+        id="inputNombre"
+        name="nombre"
+        class="form-control w-100"
+        required
+        placeholder="(nombre del jugador)"
+      />
     </div>
 
-    <div class="d-flex flex-wrap justify-content-center gap-3 p-3">
-      <div>
-        <label>Stock disponible</label>
-      </div>
-      <div>
-        <input type="number" name="stock" required value="0" min="0" />
-      </div>
-
-      <div>
-        <label>Imagen de la figurita</label>
-      </div>
-      <div class="mb-3">
-        <input
-          type="file"
-          name="imagen"
-          accept="image/*"
-          class="form-control"
-        />
-      </div>
+    <div class="mb-3">
+      <label for="selectClaseFigurita" class="form-label"
+        >Clase de figurita</label
+      >
+      <select
+        id="selectClaseFigurita"
+        name="claseFigurita"
+        class="form-select w-100 cls_figurita"
+      ></select>
     </div>
 
-    <div class="d-flex flex-wrap justify-content-center gap-3 p-3">
-      <div>
-        <button type="submit" class="btn btn-primary btn-figurita">
-          Agregar
-        </button>
-      </div>
+    <div class="mb-3">
+      <label for="inputPrecioFigurita" class="form-label"
+        >Precio de figurita</label
+      >
+      <input
+        type="number"
+        id="inputPrecioFigurita"
+        name="precio"
+        class="form-control w-100"
+        value="0"
+        min="0"
+        required
+      />
     </div>
+
+    <div class="mb-3">
+      <label for="inputStockFigurita" class="form-label"
+        >Stock disponible</label
+      >
+      <input
+        type="range"
+        id="inputStockFigurita"
+        name="stock"
+        class="form-range w-100"
+        min="0"
+        max="100"
+        value="5"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="inputImagenFigurita" class="form-label"
+        >Imagen de la figurita</label
+      >
+      <input
+        type="file"
+        id="inputImagenFigurita"
+        name="imagen"
+        accept="image/*"
+        class="form-control w-100"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Agregar</button>
   </form>
 
-  <div id="respuesta_agregar_figurita"></div>
+  <div id="respuesta_agregar_figurita" class="mt-2"></div>
 </div>

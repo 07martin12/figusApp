@@ -1,24 +1,49 @@
-<div id="listar_albums">
-  <h1>Listar albums</h1>
-  <h2>Listar Álbum por ID</h2>
-  <p>Se puede buscar un álbum específico indicando su ID.</p>
+<div class="card bg-light border rounded p-3 mb-4">
+  <h5 class="card-title mb-3">Listar álbumes</h5>
 
-  <form name="listar_album_por_id" class="form_listar">
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Id del álbum</label>
+  <div class="mb-2">
+    <p class="card-text mb-2">
+      Se puede buscar un álbum específico indicando su ID.
+    </p>
+    <form id="form-listar-album">
+      <div class="mb-2">
+        <label for="inputAlbumId" class="form-label">ID del álbum</label>
+        <input
+          type="number"
+          class="form-control"
+          id="inputAlbumId"
+          value="1"
+          required
+        />
       </div>
-      <div>
-        <input type="number" name="id" required min="1" value="1" />
-      </div>
-  
-      <div>
-        <button type="submit" class="btn btn-primary btn-listar">Listar</button>
-      </div>
-    </div>
-  </form>
+      <button type="submit" class="btn btn-primary">Buscar álbum</button>
+    </form>
+    <div id="respuestaAlbum" class="mt-2"></div>
+  </div>
 
-  <div id="respuesta_listar_album_por_id"></div>
+  <hr class="my-3" />
+
+  <div>
+    <p class="card-text mb-2">
+      Se puede seleccionar la cantidad de álbumes que desea listar.
+    </p>
+    <form id="form-listar-album-limite">
+      <div class="mb-2">
+        <label for="inputAlbumLimite" class="form-label"
+          >Número de álbumes</label
+        >
+        <input
+          type="range"
+          class="form-range"
+          id="inputAlbumLimite"
+          name="limite"
+          min="1"
+          max="50"
+          value="5"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Listar álbumes</button>
+    </form>
+    <div id="respuestaAlbumLimite" class="mt-2"></div>
+  </div>
 </div>

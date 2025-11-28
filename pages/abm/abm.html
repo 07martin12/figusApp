@@ -1,5 +1,5 @@
 <div class="d-flex panel-height">
-  <aside class="bg-light border-end px-3 py-3 sidebar-width">
+  <aside class="bg-light border-end px-3 py-3 pb-5 sidebar-width">
     <div class="text-center mb-4">
       <img
         src="assets/img/icons/fotoPerfilDefault.png"
@@ -10,7 +10,8 @@
       <button class="btn btn-danger btn-sm w-100">Cerrar sesión</button>
     </div>
 
-    <h5>Administración</h5>
+    <h5 class="text-center mb-3">Administración</h5>
+
     <ul class="list-unstyled">
       <li class="mb-2">
         <button
@@ -199,51 +200,69 @@
   </aside>
 
   <div class="flex-grow-1 p-4">
-    <div class="panel-admin p-4">
-      <p class="texto-panel mb-4">
-        Bienvenido al panel de administración de <strong>FigusApp</strong>.
-        Desde esta interfaz, los administradores podrán gestionar las secciones
-        del sistema: figuritas, sobres, álbumes y usuarios. Cada sección incluye
-        herramientas que permiten agregar, listar, modificar y eliminar
-        registros en la base de datos para asegurar que la información se
-        mantenga actualizada y organizada.
-      </p>
+    <h4 class="mb-4 text-center">
+      Bienvenido al panel de administración de <strong>FigusApp</strong>
+    </h4>
+    <p class="intro-paragraph mb-5">
+      Desde esta interfaz, los administradores podrán gestionar las secciones
+      del sistema: figuritas, sobres, álbumes y usuarios. Cada sección incluye
+      herramientas que permiten agregar, listar, modificar y eliminar registros
+      en la base de datos para asegurar que la información se mantenga
+      actualizada y organizada.
+    </p>
 
-      <ul class="ps-0 mb-0 lista-fondo">
-        <li class="texto-panel mb-3 d-flex align-items-start">
-          <span class="me-2">📄</span>
-          <div>
-            <strong>Listar:</strong> Cuenta con formularios que permiten
-            consultar los registros existentes de Figuritas, Sobres, Álbumes y
-            Usuarios, facilitando su visualización y búsqueda.
-          </div>
-        </li>
-        <li class="texto-panel mb-3 d-flex align-items-start">
-          <span class="me-2">➕</span>
-          <div>
-            <strong>Agregar:</strong> Cuenta con formularios que permiten crear
-            nuevos registros de Figuritas, Sobres, Álbumes y Usuarios,
-            asegurando que la información se mantenga completa y actualizada.
-          </div>
-        </li>
-        <li class="texto-panel mb-3 d-flex align-items-start">
-          <span class="me-2">✏️</span>
-          <div>
-            <strong>Modificar:</strong> Cuenta con formularios que permiten
-            actualizar los registros existentes en la base de datos, como
-            Figuritas, Sobres, Álbumes y Usuarios, de manera rápida y segura.
-          </div>
-        </li>
-        <li class="texto-panel mb-3 d-flex align-items-start">
-          <span class="me-2">🗑️</span>
-          <div>
-            <strong>Eliminar:</strong> Cuenta con formularios que permiten
-            eliminar registros existentes en la base de datos, como Figuritas,
-            Sobres, Álbumes y Usuarios, manteniendo la base de datos limpia y
-            organizada.
-          </div>
-        </li>
-      </ul>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col">
+        <div
+          class="p-3 bg-light border rounded h-100 d-flex flex-column column-card"
+        >
+          <h5>Listar</h5>
+          <p class="mb-0">
+            Cuenta con formularios que permiten consultar los registros
+            existentes de Figuritas, Sobres, Álbumes y Usuarios, facilitando su
+            visualización y búsqueda.
+          </p>
+        </div>
+      </div>
+
+      <div class="col">
+        <div
+          class="p-3 bg-light border rounded h-100 d-flex flex-column column-card"
+        >
+          <h5>Agregar</h5>
+          <p class="mb-0">
+            Cuenta con formularios que permiten crear nuevos registros de
+            Figuritas, Sobres, Álbumes y Usuarios, asegurando que la información
+            se mantenga completa y actualizada.
+          </p>
+        </div>
+      </div>
+
+      <div class="col">
+        <div
+          class="p-3 bg-light border rounded h-100 d-flex flex-column column-card"
+        >
+          <h5>Modificar</h5>
+          <p class="mb-0">
+            Cuenta con formularios que permiten actualizar los registros
+            existentes en la base de datos, como Figuritas, Sobres, Álbumes y
+            Usuarios, de manera rápida y segura.
+          </p>
+        </div>
+      </div>
+
+      <div class="col">
+        <div
+          class="p-3 bg-light border rounded h-100 d-flex flex-column column-card"
+        >
+          <h5>Eliminar</h5>
+          <p class="mb-0">
+            Cuenta con formularios que permiten eliminar registros existentes en
+            la base de datos, como Figuritas, Sobres, Álbumes y Usuarios,
+            manteniendo la base de datos limpia y organizada.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

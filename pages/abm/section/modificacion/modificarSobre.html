@@ -1,67 +1,73 @@
-<div id="modificar_sobre">
-  <h1>Modificar Sobres</h1>
-  <h2>Modificar Sobre</h2>
-  <p>Se pueden modificar sobres.</p>
+<div class="card bg-light border rounded p-4 mb-4">
+  <h5 class="card-title mb-3">Modificar Sobre</h5>
+  <p class="card-text mb-3">Se pueden modificar sobres.</p>
 
   <form name="modificar_sobre" class="form_modificar">
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Id del sobre</label>
-      </div>
-      <div>
-        <input type="number" name="id" required min="1" value="1" />
-      </div>
-
-      <div>
-        <label>Clase del álbum seleccionado</label>
-      </div>
-      <div>
-        <select name="idAlbum" class="cls_album"></select>
-      </div>
+    <div class="mb-3">
+      <label for="inputModificarSobreId" class="form-label">ID del sobre</label>
+      <input
+        type="number"
+        id="inputModificarSobreId"
+        name="id"
+        class="form-control w-100"
+        required
+        min="1"
+        value="1"
+      />
     </div>
 
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Clase de sobre</label>
-      </div>
-      <div>
-        <select name="claseSobre" class="cls_sobre"></select>
-      </div>
-
-      <div>
-        <label>Stock disponible</label>
-      </div>
-      <div>
-        <input type="number" name="stock" required min="0" value="0" />
-      </div>
+    <div class="mb-3">
+      <label for="selectModificarAlbum" class="form-label"
+        >Clase del álbum seleccionado</label
+      >
+      <select
+        id="selectModificarAlbum"
+        name="idAlbum"
+        class="form-select w-100 cls_album"
+      ></select>
     </div>
 
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Imagen nueva</label>
-      </div>
-      <div>
-        <input
-          type="file"
-          name="imagen"
-          accept="image/*"
-          class="form-control"
-        />
-      </div>
-
-      <div>
-        <button type="submit" class="btn btn-primary btn-modificar">
-          Modificar
-        </button>
-      </div>
+    <div class="mb-3">
+      <label for="selectModificarClaseSobre" class="form-label"
+        >Clase de sobre</label
+      >
+      <select
+        id="selectModificarClaseSobre"
+        name="claseSobre"
+        class="form-select w-100 cls_sobre"
+      ></select>
     </div>
+
+    <div class="mb-3">
+      <label for="inputModificarStockSobre" class="form-label"
+        >Stock disponible</label
+      >
+      <input
+        type="range"
+        id="inputModificarStockSobre"
+        name="stock"
+        class="form-range w-100"
+        min="0"
+        max="100"
+        value="0"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="inputModificarImagenSobre" class="form-label"
+        >Imagen nueva</label
+      >
+      <input
+        type="file"
+        id="inputModificarImagenSobre"
+        name="imagen"
+        accept="image/*"
+        class="form-control w-100"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Modificar</button>
   </form>
 
-  <div id="respuesta_modificar_sobre"></div>
+  <div id="respuesta_modificar_sobre" class="mt-2"></div>
 </div>

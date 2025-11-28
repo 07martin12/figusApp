@@ -1,67 +1,65 @@
-<div id="agregar_album">
-  <h1>Agregar</h1>
-  <h2>Agregar Álbum</h2>
-  <p>Se pueden agregar álbums indicando país y tipo.</p>
+<div class="card bg-light border rounded p-4 mb-4">
+  <h5 class="card-title mb-3">Agregar Álbum</h5>
+  <p class="card-text mb-3">
+    Se pueden agregar álbumes indicando país, tipo, precio, stock e imagen.
+  </p>
+
   <form name="agregar_album" class="form_alta">
-    <div
-      class="d-flex flex-wrap justify-content-center align-items-center gap-3 p-3"
-    >
-      <div>
-        <label>Nombre del país</label>
-      </div>
-      <div>
-        <select name="pais" class="cls_pais"></select>
-      </div>
-
-      <div>
-        <label>Clase de álbum</label>
-      </div>
-      <div>
-        <select name="clase" class="cls_album"></select>
-      </div>
+    <div class="mb-3">
+      <label for="selectPais" class="form-label">Nombre del país</label>
+      <select
+        id="selectPais"
+        name="pais"
+        class="form-select w-100 cls_pais"
+      ></select>
     </div>
 
-    <div class="d-flex flex-wrap justify-content-center gap-3 p-3">
-      <div>
-        <label>Precio del álbum</label>
-      </div>
-      <div>
-        <input
-          type="number"
-          name="precio"
-          class="input-album"
-          value="0"
-          min="0"
-        />
-      </div>
-
-      <div>
-        <label>Stock disponible</label>
-      </div>
-      <div>
-        <input
-          type="number"
-          name="stock"
-          class="input-album"
-          value="0"
-          min="0"
-        />
-      </div>
+    <div class="mb-3">
+      <label for="selectClase" class="form-label">Clase de álbum</label>
+      <select
+        id="selectClase"
+        name="clase"
+        class="form-select w-100 cls_album"
+      ></select>
     </div>
 
-    <div class="d-flex flex-wrap justify-content-center gap-3 p-3">
-      <div>
-        <label>Imagen del álbum</label>
-      </div>
-      <div class="mb-3">
-        <input class="form-control" type="file" id="imagen" name="imagen" />
-      </div>
-
-      <div>
-        <button type="submit" class="btn btn-primary btn-album">Agregar</button>
-      </div>
+    <div class="mb-3">
+      <label for="inputPrecio" class="form-label">Precio del álbum</label>
+      <input
+        type="number"
+        id="inputPrecio"
+        name="precio"
+        class="form-control w-100"
+        value="0"
+        min="0"
+      />
     </div>
+
+    <div class="mb-3">
+      <label for="inputStock" class="form-label">Stock disponible</label>
+      <input
+        type="range"
+        id="inputStock"
+        name="stock"
+        class="form-range w-100"
+        min="0"
+        max="100"
+        value="5"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="inputImagen" class="form-label">Imagen del álbum</label>
+      <input
+        type="file"
+        id="inputImagen"
+        name="imagen"
+        class="form-control w-100"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Agregar</button>
   </form>
 
-  <div id="respuesta_agregar_album"></div>
+  <div id="respuesta_agregar_album" class="mt-2"></div>
 </div>
