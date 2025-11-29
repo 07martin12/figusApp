@@ -117,8 +117,8 @@ const mostrarValoresRange = (): void => {
     if (!span) {
       span = document.createElement("span");
       span.classList.add("range-value");
-      span.style.marginLeft = "8px"; 
-      container.insertBefore(span, range); 
+      span.style.marginLeft = "8px";
+      container.insertBefore(span, range);
     }
 
     span.textContent = range.value;

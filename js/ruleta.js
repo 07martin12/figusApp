@@ -1,14 +1,29 @@
 "use strict";
-const btnGirar = document.querySelector(".btn-girar");
-const ruletaBackground = document.querySelector(".ruleta-background");
-const ruletaItems = document.querySelector(".ruleta-items");
-btnGirar?.addEventListener("click", () => {
-    ruletaBackground.classList.add("girar-background");
-    ruletaItems.classList.add("girar-items");
-    btnGirar.disabled = true;
-    setTimeout(() => {
-        ruletaBackground.classList.remove("girar-background");
-        ruletaItems.classList.remove("girar-items");
-        btnGirar.disabled = false;
-    }, 3000);
+const girarBtn = document.getElementById("girarBtn");
+const premiosCircle = document.querySelector(".premios-circle");
+const ruletaImg = document.querySelector(".ruleta");
+function waitForAnimationEnd(el) {
+    return new Promise((resolve) => {
+        const handler = () => {
+            el.removeEventListener("animationend", handler);
+            resolve();
+        };
+        el.addEventListener("animationend", handler);
+    });
+}
+girarBtn.addEventListener("click", async () => {
+    girarBtn.disabled = true;
+    premiosCircle.classList.add("girar");
+    ruletaImg.classList.add("girar");
+    try {
+        await Promise.all([
+            waitForAnimationEnd(premiosCircle),
+            waitForAnimationEnd(ruletaImg),
+        ]);
+    }
+    finally {
+        premiosCircle.classList.remove("girar");
+        ruletaImg.classList.remove("girar");
+        girarBtn.disabled = false;
+    }
 });

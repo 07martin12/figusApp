@@ -92,6 +92,10 @@ input::placeholder {
   font-weight: 700;
 }
 
+#footer img {
+  cursor: pointer;
+}
+
 @media (max-width: 360px) {
   .navbar {
     padding-left: 1rem;

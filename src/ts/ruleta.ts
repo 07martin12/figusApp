@@ -1,19 +1,31 @@
-const btnGirar = document.querySelector(".btn-girar") as HTMLButtonElement;
-const ruletaBackground = document.querySelector(
-  ".ruleta-background"
-) as HTMLImageElement;
-const ruletaItems = document.querySelector(".ruleta-items") as HTMLDivElement;
+const girarBtn = document.getElementById("girarBtn") as HTMLButtonElement;
+const premiosCircle =
+  document.querySelector<HTMLDivElement>(".premios-circle")!;
+const ruletaImg = document.querySelector<HTMLImageElement>(".ruleta")!;
 
-btnGirar?.addEventListener("click", () => {
-  ruletaBackground.classList.add("girar-background");
-  ruletaItems.classList.add("girar-items");
+function waitForAnimationEnd(el: Element): Promise<void> {
+  return new Promise((resolve) => {
+    const handler = () => {
+      el.removeEventListener("animationend", handler);
+      resolve();
+    };
+    el.addEventListener("animationend", handler);
+  });
+}
 
-  btnGirar.disabled = true;
+girarBtn.addEventListener("click", async () => {
+  girarBtn.disabled = true;
+  premiosCircle.classList.add("girar");
+  ruletaImg.classList.add("girar");
 
-  setTimeout(() => {
-    ruletaBackground.classList.remove("girar-background");
-    ruletaItems.classList.remove("girar-items");
-
-    btnGirar.disabled = false;
-  }, 3000);
+  try {
+    await Promise.all([
+      waitForAnimationEnd(premiosCircle),
+      waitForAnimationEnd(ruletaImg),
+    ]);
+  } finally {
+    premiosCircle.classList.remove("girar");
+    ruletaImg.classList.remove("girar");
+    girarBtn.disabled = false;
+  }
 });
