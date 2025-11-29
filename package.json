@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "tsc -w",
     "build": "tsc",
-    "start": "echo 'Este proyecto es frontend, no hay servidor para iniciar'"
+    "start": "Este proyecto es frontend",
+    "postinstall": "chmod +x node_modules/.bin/tsc"
   },
   "devDependencies": {
     "typescript": "^5.6.0"
