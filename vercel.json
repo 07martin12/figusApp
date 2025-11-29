@@ -1,0 +1,17 @@
+{
+  "builds": [
+    {
+      "src": "src/ts/**/*.ts",
+      "use": "@vercel/node",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/src/ts/index.ts"
+    }
+  ]
+}
