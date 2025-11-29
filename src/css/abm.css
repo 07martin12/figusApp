@@ -1,3 +1,7 @@
+main {
+  background-image: none;
+}
+
 .flex-grow-1 {
   background-image: url("../../assets/img/fondos/fondoEstadioDesktop.png");
   background-repeat: repeat;
@@ -37,4 +41,32 @@
   font-size: 18px;
   text-align: justify;
   font-weight: 500;
+}
+
+.profile-icon {
+  background: none !important;
+  border: none !important;
+  font-size: 18px;
+}
+
+.img-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-icon {
+  position: absolute;
+  bottom: 10px;
+}
+
+#btn-album {
+  right: 55px;
+}
+
+#btn-config {
+  left: 55px;
+}
+
+.profile-icon:hover {
+  transform: scale(1.2) !important;
 }

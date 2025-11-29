@@ -58,7 +58,7 @@ billeteraBtn?.addEventListener("click", async () => {
   }
 });
 
-function loadCss(href: string, dataAttr: string): Promise<boolean> {
+export function loadCss(href: string, dataAttr: string): Promise<boolean> {
   return new Promise((resolve) => {
     const dynamicLinks = document.querySelectorAll(
       "link[data-ruleta-css], link[data-abm-css], link[data-billetera-css]"
@@ -74,7 +74,7 @@ function loadCss(href: string, dataAttr: string): Promise<boolean> {
   });
 }
 
-function loadJs(src: string, dataAttr: string): Promise<boolean> {
+export function loadJs(src: string, dataAttr: string): Promise<boolean> {
   return new Promise((resolve) => {
     const existing = document.querySelector(`script[${dataAttr}]`);
     if (existing) existing.remove();

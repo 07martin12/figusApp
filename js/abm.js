@@ -1,4 +1,4 @@
-import { showErrorMessage } from "./main.js";
+import { showErrorMessage, loadCss, loadJs } from "./main.js";
 const clases_figurita = ["Comun", "Especial", "Legendaria"];
 const clases_sobre = ["Gris", "Dorado", "Premium"];
 const clases_album = ["Mundial", "Continental", "Nacional", "Local"];
@@ -116,6 +116,22 @@ const desactivarForms = (forms) => {
 const procesarFormulario = (form) => {
     alert(`Formulario con name: ${form.name} ha sido enviado.`);
 };
+const albumBtn = document.getElementById("btn-album");
+const mainContent = document.getElementById("mainContent");
+albumBtn?.addEventListener("click", async () => {
+    try {
+        const response = await fetch("../pages/album/album.html");
+        if (!response.ok)
+            throw new Error(`HTTP ${response.status}`);
+        const html = await response.text();
+        mainContent.innerHTML = html;
+        await loadCss("../src/css/album.css", "data-album-css");
+        await loadJs("../js/album.js", "data-album-js");
+    }
+    catch (error) {
+        mainContent.innerHTML = showErrorMessage(error);
+    }
+});
 /*document.addEventListener("DOMContentLoaded", async () => {
   await cargarSecciones();
   cargarSelects();

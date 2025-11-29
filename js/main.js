@@ -58,7 +58,7 @@ billeteraBtn?.addEventListener("click", async () => {
         mainContent.innerHTML = showErrorMessage(error);
     }
 });
-function loadCss(href, dataAttr) {
+export function loadCss(href, dataAttr) {
     return new Promise((resolve) => {
         const dynamicLinks = document.querySelectorAll("link[data-ruleta-css], link[data-abm-css], link[data-billetera-css]");
         dynamicLinks.forEach((link) => link.remove());
@@ -71,7 +71,7 @@ function loadCss(href, dataAttr) {
         document.head.appendChild(link);
     });
 }
-function loadJs(src, dataAttr) {
+export function loadJs(src, dataAttr) {
     return new Promise((resolve) => {
         const existing = document.querySelector(`script[${dataAttr}]`);
         if (existing)
