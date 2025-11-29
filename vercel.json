@@ -2,16 +2,9 @@
   "builds": [
     {
       "src": "src/ts/**/*.ts",
-      "use": "@vercel/node",
-      "config": {
-        "maxLambdaSize": "50mb"
-      }
+      "use": "@vercel/static-build",
+      "config": {}
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/src/ts/index.ts"
-    }
-  ]
+  "routes": [{ "src": "/(.*)", "dest": "/index.html" }]
 }
