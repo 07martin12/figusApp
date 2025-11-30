@@ -1,8 +1,8 @@
 const perfilBtn = document.getElementById("perfilBtn");
 const ruletaBtn = document.getElementById("ruletaBtn");
 const billeteraBtn = document.getElementById("billeteraBtn");
-const mainContent = document.getElementById("mainContent");
 const btnEnviarConsulta = document.getElementById("btnEnviarConsulta");
+const mainContent = document.getElementById("mainContent");
 btnEnviarConsulta?.addEventListener("click", (e) => {
     e.preventDefault();
     const form = btnEnviarConsulta.closest("form");
@@ -17,50 +17,47 @@ btnEnviarConsulta?.addEventListener("click", (e) => {
     form.prepend(alertDiv);
 });
 perfilBtn?.addEventListener("click", async () => {
-    try {
-        const response = await fetch("../pages/abm/abm.html");
-        if (!response.ok)
-            throw new Error(`HTTP ${response.status}`);
-        const html = await response.text();
-        mainContent.innerHTML = html;
-        await loadCss("../src/css/abm.css", "data-abm-css");
-        await loadJs("../js/abm.js", "data-abm-js");
+    let role = null;
+    do {
+        role =
+            prompt("Ingresa tu rol de usuario: 'comun' o 'administrador'")
+                ?.trim()
+                .toLowerCase() || null;
+        if (role !== "comun" && role !== "administrador") {
+            alert("Rol incorrecto. Debes ingresar 'comun' o 'administrador'.");
+            role = null;
+        }
+    } while (!role);
+    if (role === "comun") {
+        await loadSection("../pages/user/user.html", "../src/css/user.css", "data-user-css", "../js/user.js", "data-user-js");
     }
-    catch (error) {
-        mainContent.innerHTML = showErrorMessage(error);
+    else if (role === "administrador") {
+        await loadSection("../pages/abm/abm.html", "../src/css/abm.css", "data-abm-css", "../js/abm.js", "data-abm-js");
     }
 });
 ruletaBtn?.addEventListener("click", async () => {
-    try {
-        const response = await fetch("../pages/ruleta/ruleta.html");
-        if (!response.ok)
-            throw new Error(`HTTP ${response.status}`);
-        const html = await response.text();
-        mainContent.innerHTML = html;
-        await loadCss("../src/css/ruleta.css", "data-ruleta-css");
-        await loadJs("../js/ruleta.js", "data-ruleta-js");
-    }
-    catch (error) {
-        mainContent.innerHTML = showErrorMessage(error);
-    }
+    await loadSection("../pages/ruleta/ruleta.html", "../src/css/ruleta.css", "data-ruleta-css", "../js/ruleta.js", "data-ruleta-js");
 });
 billeteraBtn?.addEventListener("click", async () => {
+    await loadSection("../pages/billetera/billetera.html", "../src/css/album.css", "data-billetera-css", "../js/album.js", "data-billetera-js");
+});
+async function loadSection(htmlPath, cssPath, cssDataAttr, jsPath, jsDataAttr) {
     try {
-        const response = await fetch("../pages/billetera/billetera.html");
+        const response = await fetch(htmlPath);
         if (!response.ok)
             throw new Error(`HTTP ${response.status}`);
         const html = await response.text();
         mainContent.innerHTML = html;
-        await loadCss("../src/css/album.css", "data-billetera-css");
-        await loadJs("../js/album.js", "data-billetera-js");
+        await loadCss(cssPath, cssDataAttr);
+        await loadJs(jsPath, jsDataAttr);
     }
     catch (error) {
         mainContent.innerHTML = showErrorMessage(error);
     }
-});
+}
 export function loadCss(href, dataAttr) {
     return new Promise((resolve) => {
-        const dynamicLinks = document.querySelectorAll("link[data-ruleta-css], link[data-abm-css], link[data-billetera-css]");
+        const dynamicLinks = document.querySelectorAll("link[data-ruleta-css], link[data-abm-css], link[data-billetera-css], link[data-user-css]");
         dynamicLinks.forEach((link) => link.remove());
         const link = document.createElement("link");
         link.rel = "stylesheet";

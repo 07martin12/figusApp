@@ -1,156 +1,129 @@
-<div class="bienvenida">
-  <h2>Datos de usuario</h2>
-
-  <div class="foto_perfil_wrapper"></div>
-  <img
-    src="../../assets/img/icons/btn_camara.png"
-    alt="Modificar"
-    class="camara_icon"
-  />
-</div>
-
-<p>
-  Gestiona tu información, la privacidad y la seguridad para mejorar tu
-  experiencia en FigurApp.
-</p>
-
-<div class="informacion_personal">
-  <div class="form_group">
-    <form class="form_usuario">
-      <div><label>Nombre</label></div>
-      <div>
-        <div>
-          <input type="text" id="nameInput" placeholder="Nombre actual" />
-        </div>
-        <div>
-          <button type="button" id="nameBtn">
-            <img
-              src="../../assets/img/icons/btn_modificar.png"
-              alt="Modificar"
-            />
-          </button>
-        </div>
-      </div>
-    </form>
-
-    <form class="form_usuario">
-      <div><label>Correo Electrónico</label></div>
-      <div>
-        <div>
-          <input type="email" id="emailInput" placeholder="Correo actual" />
-        </div>
-        <div>
-          <button type="button" id="emailBtn">
-            <img
-              src="../../assets/img/icons/btn_modificar.png"
-              alt="Modificar"
-            />
-          </button>
-        </div>
-      </div>
-    </form>
+<div>
+  <div class="mb-4">
+    <h2>Datos de usuario</h2>
+    <p class="text-muted">
+      Gestiona tu información, la privacidad y la seguridad para mejorar tu
+      experiencia en FigurApp.
+    </p>
   </div>
 
-  <div class="form_group">
-    <form class="form_usuario">
-      <div><label>Número de Teléfono</label></div>
-      <div>
-        <div>
-          <input type="tel" id="phoneInput" placeholder="Número actual" />
-        </div>
-        <div>
-          <button type="button" id="phoneBtn">
-            <img
-              src="../../assets/img/icons/btn_modificar.png"
-              alt="Modificar"
-            />
-          </button>
-        </div>
-      </div>
-    </form>
-
-    <form class="form_usuario">
-      <div><label>País de Origen</label></div>
-      <div>
-        <div><select id="countrySelect"></select></div>
-        <div>
-          <button type="button" id="countryBtn">
-            <img
-              src="../../assets/img/icons/btn_modificar.png"
-              alt="Modificar"
-            />
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
-
-  <div class="form_group">
-    <form class="form_usuario">
-      <div class="form_group">
-        <div><label>Contraseña Actual</label></div>
-        <div>
-          <input
-            type="password"
-            id="currentPasswordInput"
-            placeholder="********"
+  <div class="card bg-light border rounded p-3 mb-4">
+    <div class="mb-3">
+      <label for="inputName" class="form-label">Nombre</label>
+      <div class="d-flex gap-2 align-items-center">
+        <input type="text" id="inputName" class="form-control" />
+        <button id="btn-update-name" title="Modificar">
+          <img
+            src="../../assets/img/icons/btn_actualizar.png"
+            alt="Actualizar"
           />
-        </div>
-        <div>
-          <div>
-            <input
-              type="password"
-              id="confirmPasswordInput"
-              placeholder="Confirmar contraseña"
-            />
-          </div>
-          <div>
-            <button type="button" id="confirmPasswordBtn">
-              <img
-                src="../../assets/img/icons/btn_modificar.png"
-                alt="Modificar"
-              />
-            </button>
-          </div>
-        </div>
+        </button>
       </div>
-    </form>
-  </div>
+      <div id="status-name" class="mt-2 small text-muted"></div>
+    </div>
 
-  <div class="form_group">
-    <form class="form_usuario">
-      <div class="form_group">
-        <div><label>Fecha de Nacimiento</label></div>
-        <div><div id="fechaActual">Fecha actual</div></div>
-        <div>
-          <div><input type="date" id="birthDateInput" /></div>
-          <div>
-            <button type="button" id="birthDateBtn">
-              <img
-                src="../../assets/img/icons/btn_modificar.png"
-                alt="Modificar"
-              />
-            </button>
-          </div>
-        </div>
+    <div class="mb-3">
+      <label for="inputEmail" class="form-label">Correo electrónico</label>
+      <div class="d-flex gap-2 align-items-center">
+        <input type="email" id="inputEmail" class="form-control" />
+        <button id="btn-update-email" title="Modificar">
+          <img
+            src="../../assets/img/icons/btn_actualizar.png"
+            alt="Actualizar"
+          />
+        </button>
       </div>
-    </form>
-  </div>
+      <div id="status-email" class="mt-2 small text-muted"></div>
+    </div>
 
-  <div class="form_group">
-    <form class="form_usuario">
-      <div><label>Eliminar cuenta</label></div>
-      <div>
-        <div><select id="deleteReason"></select></div>
-        <div>
-          <button type="button" id="deleteBtn">
-            <img
-              src="../../assets/img/icons/btn_alerta.png"
-              alt="Eliminar cuenta"
-            />
-          </button>
-        </div>
+    <div class="mb-3">
+      <label for="inputPhone" class="form-label">Número de teléfono</label>
+      <div class="d-flex gap-2 align-items-center">
+        <input type="tel" id="inputPhone" class="form-control" />
+        <button id="btn-update-phone" title="Modificar">
+          <img
+            src="../../assets/img/icons/btn_actualizar.png"
+            alt="Actualizar"
+          />
+        </button>
       </div>
-    </form>
+      <div id="status-phone" class="mt-2 small text-muted"></div>
+    </div>
+
+    <div class="mb-3">
+      <label for="inputCountry" class="form-label">País de origen</label>
+      <div class="d-flex gap-2 align-items-center">
+        <input type="text" id="inputCountry" class="form-control" />
+        <button id="btn-update-country" title="Modificar">
+          <img
+            src="../../assets/img/icons/btn_actualizar.png"
+            alt="Actualizar"
+          />
+        </button>
+      </div>
+      <div id="status-country" class="mt-2 small text-muted"></div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Fecha de nacimiento</label>
+      <div class="d-flex gap-2 align-items-center">
+        <input type="date" id="inputDob" class="form-control flex-grow-1" />
+        <button id="btn-update-dob" title="Modificar">
+          <img
+            src="../../assets/img/icons/btn_actualizar.png"
+            alt="Actualizar"
+          />
+        </button>
+      </div>
+      <div id="status-dob" class="mt-2 small text-muted"></div>
+    </div>
+
+    <hr />
+
+    <div class="mb-3">
+      <label class="form-label">Contraseña</label>
+      <div class="d-flex gap-2 align-items-center">
+        <input
+          type="password"
+          id="inputPass1"
+          class="form-control"
+          placeholder="Nueva contraseña"
+        />
+        <input
+          type="password"
+          id="inputPass2"
+          class="form-control"
+          placeholder="Confirmar nueva contraseña"
+        />
+        <button id="btn-update-pass" title="Modificar contraseña">
+          <img
+            src="../../assets/img/icons/btn_actualizar.png"
+            alt="Actualizar contraseña"
+          />
+        </button>
+      </div>
+      <div id="status-pass" class="mt-2 small text-muted"></div>
+    </div>
+
+    <hr />
+
+    <div class="mb-3">
+      <label class="form-label">Eliminar cuenta</label>
+      <div class="d-flex gap-2 align-items-center">
+        <select id="select-delete-reason" class="form-select flex-grow-1">
+          <option value="" selected disabled>
+            Selecciona el motivo de eliminación
+          </option>
+          <option value="privacidad">Preocupación por privacidad</option>
+          <option value="desuso">No uso la cuenta</option>
+          <option value="problemas">Problemas técnicos</option>
+          <option value="otro">Otro</option>
+        </select>
+        <button id="btn-delete-account" class="btn btn-danger text-nowrap">
+          Eliminar cuenta
+        </button>
+      </div>
+      <div id="status-delete" class="mt-2 small text-muted"></div>
+    </div>
   </div>
 </div>

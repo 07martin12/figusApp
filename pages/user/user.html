@@ -1,17 +1,32 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Perfil de Usuario - FigurApp</title>
-    <link rel="stylesheet" href="../../src/css/style.css" />
-    <link rel="stylesheet" href="../../src/css/user.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
+<div class="d-flex">
+  <aside class="bg-light border-end px-3 py-3 pb-5 sidebar-width">
+    <div class="profile-wrapper text-center mb-4">
+      <div class="img-container">
+        <img
+          id="profilePhoto"
+          src="assets/img/icons/fotoPerfilDefault.png"
+          alt="Foto de perfil"
+          class="rounded-circle mb-2"
+        />
+      </div>
+      <h6 id="profileEmail">usuario@example.com</h6>
+      <button id="btn-logout" class="btn btn-danger btn-sm w-100 mb-3">
+        Cerrar sesión
+      </button>
+    </div>
 
-  <body>
-    <section>
-      <div class="section_configuracion"></div>
-    </section>
-    <script src="../../src/js/user.js"></script>
-  </body>
-</html>
+    <h5 class="text-center mb-3">Mi cuenta</h5>
+    <ul class="list-unstyled">
+      <li class="mb-2">
+        <button
+          class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-between"
+          id="btn-album"
+        >
+          Mis álbumes <span>📓</span>
+        </button>
+      </li>
+    </ul>
+  </aside>
+
+  <div class="flex-grow-1 p-4"></div>
+</div>

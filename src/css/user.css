@@ -4,152 +4,31 @@ body {
   background-size: cover;
 }
 
-.perfil_usuario {
-  text-align: center;
-  position: relative;
+.sidebar-width .btn-outline-primary,
+.sidebar-width > ul > li > .btn-outline-primary {
+  background-color: #0d6efd;
+  color: #fff;
+  border-color: #0d6efd;
+  font-weight: normal;
+  transition: all 0.3s ease;
 }
 
-.form_usuario,
-.form_group {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin: 0 10px;
+.sidebar-width .btn-outline-primary:hover,
+.sidebar-width > ul > li > .btn-outline-primary:hover {
+  background-color: transparent;
+  color: #0d6efd;
+  font-weight: 700;
 }
 
-.form_usuario > div {
-  display: flex;
-  align-items: center;
-  margin: 5px;
+button img {
+  width: 32px;
+  height: 32px;
 }
 
-.form_usuario > div > div {
-  display: flex;
-  align-items: center;
-  margin-right: 5px;
+.card button {
+  border: none !important;
 }
 
-.form_usuario input,
-.form_usuario select,
-#fechaActual {
-  width: 250px;
-  height: 35px;
-  margin-right: 5px;
-  box-sizing: border-box;
-}
-
-.form_usuario button {
-  border: none;
-  padding: 0 5px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.form_usuario button:hover img,
-.camara_icon:hover {
+button img:hover {
   transform: scale(1.2);
-}
-
-.btn_interactivos {
-  display: block;
-  position: absolute;
-  bottom: 65%;
-  left: 61%;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn_interactivos div {
-  margin: 7px 7%;
-}
-
-.btn_interactivos div button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.bienvenida {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.bienvenida div img {
-  height: 9rem;
-}
-
-.camara_icon {
-  position: absolute;
-  bottom: 20%;
-  right: 44%;
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  cursor: pointer;
-}
-
-.bienvenida img,
-.btn_interactivos div button,
-.btn_interactivos div button img,
-.form_usuario button img {
-  height: 100%;
-}
-
-p {
-  margin-bottom: 10px;
-  padding: 0;
-  font-size: 18px;
-}
-
-#usernameDisplay {
-  font-size: 1.5rem;
-}
-
-#fechaActual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (max-width: 360px) {
-  body {
-    background-image: url("../../assets/img/fondos/fondoEstadioMobile.png");
-  }
-
-  .form_usuario,
-  .form_group {
-    display: block;
-    text-align: left;
-  }
-
-  section {
-    margin-top: 25%;
-  }
-
-  .camara_icon {
-    bottom: 35%;
-    right: 34%;
-  }
-
-  .btn_interactivos {
-    display: flex;
-    position: relative;
-    bottom: 0%;
-    left: 0%;
-  }
-
-  .form_usuario input,
-  .form_usuario select,
-  #fechaActual {
-    margin-left: 0;
-  }
-
-  .form_group div > div {
-    width: 100%;
-  }
 }
