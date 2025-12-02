@@ -1,29 +1,29 @@
 [
   {
     "id": 1,
-    "nombre": "Álbum Mundial Qatar 2022",
+    "nombre": "Álbum Mundial Argentina",
     "claseAlbum": "Mundial",
-    "pais": "Internacional",
+    "pais": "Argentina",
     "precio": 1500,
     "stock": 25,
-    "imagen": "/imagenes/album_qatar_2022.jpg"
+    "imagen": "../../assets/img/fondos/Argentina/AlbumArgentina.png"
   },
   {
     "id": 2,
-    "nombre": "Álbum Copa América",
-    "claseAlbum": "Continental",
-    "pais": "Sudamérica",
+    "nombre": "Álbum Mundial Brasil",
+    "claseAlbum": "Mundial",
+    "pais": "Brasil",
     "precio": 1200,
     "stock": 30,
-    "imagen": "/imagenes/album_copa_america.jpg"
+    "imagen": "../../assets/img/fondos/Brasil/AlbumBrasil.png"
   },
   {
     "id": 3,
-    "nombre": "Álbum Liga Argentina",
-    "claseAlbum": "Nacional",
-    "pais": "Argentina",
+    "nombre": "Álbum Mundial Francia",
+    "claseAlbum": "Mundial",
+    "pais": "Francia",
     "precio": 900,
     "stock": 40,
-    "imagen": "/imagenes/album_liga_argentina.jpg"
+    "imagen": "../../assets/img/fondos/Francia/AlbumFrancia.png"
   }
 ]

@@ -53,9 +53,37 @@ const rutas: { [key: string]: string } = {
   "btn-eliminar-usuarios": "../../pages/abm/section/baja/eliminarUsuario.html",
 };
 
+const jsonRutas = new Map<string, string>([
+  ["listar_figurita_por_id", "figuritas.json"],
+  ["listar_figurita_por_sobre", "figuritas.json"],
+  ["listar_sobre_por_id", "sobres.json"],
+  ["listar_sobre_por_album", "sobres.json"],
+  ["listar_album_por_id", "albums.json"],
+  ["listar_album_por_limite", "albums.json"],
+  ["listar_usuario_por_id", "usuarios.json"],
+
+  ["agregar_figurita", "figuritas.json"],
+  ["agregar_sobre", "sobres.json"],
+  ["agregar_album", "albums.json"],
+  ["agregar_usuario", "usuarios.json"],
+
+  ["modificar_figurita", "figuritas.json"],
+  ["modificar_sobre", "sobres.json"],
+  ["modificar_album", "albums.json"],
+  ["modificar_usuario", "usuarios.json"],
+
+  ["eliminar_figurita", "figuritas.json"],
+  ["eliminar_sobre", "sobres.json"],
+  ["eliminar_album", "albums.json"],
+  ["eliminar_usuario", "usuarios.json"],
+]);
+
+/**
+ * Asocia la carga parcial de páginas según botones definidos en el mapa rutas.
+ * Carga HTML externo y luego inicializa selects, sliders y formularios.
+ */
 Object.keys(rutas).forEach((id) => {
   const btn = document.getElementById(id) as HTMLButtonElement | null;
-
   if (!btn) {
     console.log(`No se encontró un botón con id '${id}' dentro del DOM.`);
     return;
@@ -63,8 +91,15 @@ Object.keys(rutas).forEach((id) => {
 
   btn.addEventListener("click", async () => {
     const ruta = rutas[id];
-    const mainPanel = document.querySelector(".flex-grow-1")!;
+    const mainPanel = document.querySelector(
+      ".flex-grow-1"
+    ) as HTMLElement | null;
+    if (!mainPanel) {
+      console.error("No se encontró el contenedor principal (.flex-grow-1).");
+      return;
+    }
 
+    btn.disabled = true;
     try {
       const response = await fetch(ruta);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -80,6 +115,8 @@ Object.keys(rutas).forEach((id) => {
     } catch (error) {
       console.log(`Error cargando la ruta '${ruta}':`, error);
       mainPanel.innerHTML = showErrorMessage(error as any);
+    } finally {
+      btn.disabled = false;
     }
   });
 });
@@ -106,13 +143,14 @@ const cargarOption = (select: HTMLSelectElement, array: string[]): void => {
   });
 };
 
+//Muestra dinámicamente el valor de los inputs type range.
 const mostrarValoresRange = (): void => {
   const ranges = document.querySelectorAll<HTMLInputElement>(
     'input[type="range"]'
   );
-
   ranges.forEach((range) => {
-    const container = range.parentElement!;
+    const container = range.parentElement;
+    if (!container) return;
     let span = container.querySelector<HTMLSpanElement>(".range-value");
     if (!span) {
       span = document.createElement("span");
@@ -120,95 +158,33 @@ const mostrarValoresRange = (): void => {
       span.style.marginLeft = "8px";
       container.insertBefore(span, range);
     }
-
     span.textContent = range.value;
-
     range.addEventListener("input", () => {
       span!.textContent = range.value;
     });
   });
 };
 
+//Desactiva el comportamiento por defecto de los formularios y vincula procesarFormulario() al evento de click.
 const desactivarForms = (forms: NodeListOf<HTMLFormElement>): void => {
   forms.forEach((form) => {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const form = e.target as HTMLFormElement;
-      procesarFormulario(form);
+      const frm = e.currentTarget as HTMLFormElement;
+      procesarFormulario(frm);
     });
   });
 };
 
-const procesarFormulario = (form: HTMLFormElement): void => {
-  alert(`Formulario con name: ${form.name} ha sido enviado.`);
-};
+/*
+ * Procesa el envío de un formulario aplicando la acción correspondiente
+ * según su nombre (listar, agregar, modificar, eliminar).
+ */
 
-const albumBtn = document.getElementById("btn-album");
-const mainContent = document.getElementById("mainContent")!;
-
-albumBtn?.addEventListener("click", async () => {
-  try {
-    const response = await fetch("../pages/album/album.html");
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const html = await response.text();
-    mainContent.innerHTML = html;
-    await loadCss("../src/css/album.css", "data-album-css");
-    await loadJs("../js/album.js", "data-album-js");
-  } catch (error) {
-    mainContent.innerHTML = showErrorMessage(error as any);
-  }
-});
-
-/*document.addEventListener("DOMContentLoaded", async () => {
-  await cargarSecciones();
-  cargarSelects();
-
-  const hamburgerBtn =
-    document.querySelector<HTMLButtonElement>(".hamburger_btn");
-  const menuPrincipal = document.querySelector<HTMLElement>("#menu_principal");
-
-  
-
-  botonesMenu.forEach((boton, i) => {
-    boton.addEventListener("click", () => {
-      activarBoton(boton, botonesMenu);
-      toggleSubmenu(submenus[i]);
-    });
-  })
-
-  // Inicializar eventos de formularios
- 
-});
-
-// Procesa un formulario según su name, obteniendo el archivo.json asociado (map) para su posterior procesamiento.
-const procesarFormulario = async (form: HTMLFormElement) => {
-  const rutas = new Map<string, string>([
-    ["listar_figurita_por_id", "figuritas.json"],
-    ["listar_figurita_por_sobre", "figuritas.json"],
-    ["listar_sobre_por_id", "sobres.json"],
-    ["listar_sobre_por_album", "sobres.json"],
-    ["listar_album_por_id", "albums.json"],
-    ["listar_usuario_por_id", "usuarios.json"],
-
-    ["agregar_figurita", "figuritas.json"],
-    ["agregar_sobre", "sobres.json"],
-    ["agregar_album", "albums.json"],
-    ["agregar_usuario", "usuarios.json"],
-
-    ["modificar_figurita", "figuritas.json"],
-    ["modificar_sobre", "sobres.json"],
-    ["modificar_album", "albums.json"],
-    ["modificar_usuario", "usuarios.json"],
-
-    ["eliminar_figurita", "figuritas.json"],
-    ["eliminar_sobre", "sobres.json"],
-    ["eliminar_album", "albums.json"],
-    ["eliminar_usuario", "usuarios.json"],
-  ]);
-
+const procesarFormulario = async (form: HTMLFormElement): Promise<void> => {
   const formData = new FormData(form);
+  const archivo = jsonRutas.get(form.name);
 
-  const archivo = rutas.get(form.name);
   if (!archivo) return;
 
   const data = await getJson(archivo);
@@ -218,25 +194,65 @@ const procesarFormulario = async (form: HTMLFormElement) => {
     case form.name.startsWith("listar_"):
       procesarListado(form.name, formData, data);
       break;
-
     case form.name.startsWith("agregar_"):
       procesarAlta(form.name, formData, data);
       break;
-
     case form.name.startsWith("modificar_"):
       procesarModificacion(form.name, formData, data);
       break;
-
     case form.name.startsWith("eliminar_"):
       procesarEliminacion(form.name, formData, data);
       break;
   }
 };
 
-/*
- * Procesa una operación de listar, filtrando los datos según los
- * campos enviados en formDate y mostrando los resultados obtenidos en una tabla.
- 
+const albumBtn = document.getElementById(
+  "btn-album"
+) as HTMLButtonElement | null;
+const mainContent = document.getElementById(
+  "mainContent"
+) as HTMLElement | null;
+
+//Maneja el evento del click de la seccion album
+albumBtn?.addEventListener("click", async () => {
+  if (!mainContent) {
+    console.error("No se encontró mainContent.");
+    return;
+  }
+  albumBtn.disabled = true;
+  try {
+    const response = await fetch("../pages/album/album.html");
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const html = await response.text();
+    mainContent.innerHTML = html;
+    await loadCss("../src/css/album.css", "data-album-css");
+    await loadJs("../js/album.js", "data-album-js");
+  } catch (error) {
+    mainContent.innerHTML = showErrorMessage(error as any);
+  } finally {
+    albumBtn.disabled = false;
+  }
+});
+
+const sidebar = document.querySelector(".sidebar-width") as HTMLElement | null;
+const toggleBtn = document.getElementById(
+  "toggleSidebar"
+) as HTMLButtonElement | null;
+
+//Maneja el despliege del menu lateral
+toggleBtn?.addEventListener("click", () => {
+  sidebar?.classList.toggle("sidebar-open");
+});
+
+const btnLogout = document.querySelector<HTMLButtonElement>(".btn-danger");
+
+//Maneja el cierre se session del usuario
+btnLogout?.addEventListener("click", () => {
+  alert("Sesión finalizada. ¡Hasta pronto!");
+  window.location.href = "index.html";
+});
+
+//Procesa una operación de listado y genera la tabla de resultados.
 const procesarListado = (
   name: string,
   formData: FormData,
@@ -247,8 +263,8 @@ const procesarListado = (
   contenedor.innerHTML = "";
 
   const tipo = name.replace("listar_", "").replace(/_/g, " ");
-  const claves = Array.from(formData.keys());
 
+  const claves = Array.from(formData.keys());
   if (claves.length === 0) {
     contenedor.appendChild(errorDeFormulario("listar"));
     return;
@@ -259,19 +275,19 @@ const procesarListado = (
   );
 
   const datosFiltrados = filtrarDatos(formData, data);
-
   if (datosFiltrados.length === 0) {
-    const p = document.createElement("p");
-    p.classList.add("error");
-    p.textContent = `No se encontraron resultados para los datos ingresados.`;
+    const p = document.createElement("div");
+    p.className = "alert alert-warning mt-2";
+    p.textContent = "No se encontraron resultados para los datos ingresados.";
     contenedor.appendChild(p);
     return;
   }
 
-  contenedor.appendChild(crearTabla(tipo, datosFiltrados, clavesFiltro));
+  const tablaConTitulo = crearTabla(tipo, datosFiltrados, clavesFiltro);
+  contenedor.appendChild(tablaConTitulo);
 };
 
-// Procesa una operación de baja, mostrando los elementos que fueron eliminados.
+//Procesa una operación de baja mostrando los elementos eliminados
 const procesarEliminacion = (
   id: string,
   formData: FormData,
@@ -280,20 +296,15 @@ const procesarEliminacion = (
   const contenedor = document.getElementById("respuesta_" + id);
   if (!contenedor) return;
   contenedor.innerHTML = "";
-
   const claves = Array.from(formData.keys());
-
   if (claves.length === 0) {
     contenedor.appendChild(errorDeFormulario("eliminar"));
     return;
   }
-
   const clavesFiltro = claves.filter(
     (k) => k.startsWith("id") || k.toLowerCase().startsWith("limite")
   );
-
   const datosFiltrados = filtrarDatos(formData, data);
-
   if (datosFiltrados.length === 0) {
     const p = document.createElement("p");
     p.classList.add("error");
@@ -301,28 +312,24 @@ const procesarEliminacion = (
     contenedor.appendChild(p);
     return;
   }
-
   const tabla = crearTabla("eliminar", datosFiltrados, clavesFiltro);
   contenedor.appendChild(tabla);
-
   const mensaje = document.createElement("p");
   mensaje.classList.add("exito");
   mensaje.textContent = "Los elementos fueron eliminados correctamente.";
   contenedor.appendChild(mensaje);
 };
 
-// Procesa una operación de alta, validando que no exista un registro repetido,
+//Procesa una operación de alta validando duplicados y mostrando el elemento agregado.
 const procesarAlta = (id: string, formData: FormData, data: any[]): void => {
   const contenedor = document.getElementById("respuesta_" + id);
   if (!contenedor) return;
   contenedor.innerHTML = "";
-
   const claves = Array.from(formData.keys());
   if (claves.length === 0) {
     contenedor.appendChild(errorDeFormulario("alta"));
     return;
   }
-
   const existe = registroExistente(formData, data);
   if (existe) {
     const p = document.createElement("p");
@@ -331,21 +338,18 @@ const procesarAlta = (id: string, formData: FormData, data: any[]): void => {
     contenedor.appendChild(p);
     return;
   }
-
   const nuevoObjeto: any = {};
   claves.forEach((key) => {
     nuevoObjeto[key] = formData.get(key);
   });
-
   contenedor.appendChild(crearTabla("alta", [nuevoObjeto], []));
-
   const mensaje = document.createElement("p");
   mensaje.classList.add("exito");
   mensaje.textContent = "El elemento se agregó correctamente.";
   contenedor.appendChild(mensaje);
 };
 
-// Procesa una operación de modificacion, mostrando los datos originales y los nuevos en dos tablas distintas.
+//Procesa una operación de modificación mostrando datos originales y modificados.
 const procesarModificacion = (
   id: string,
   formData: FormData,
@@ -354,15 +358,12 @@ const procesarModificacion = (
   const contenedor = document.getElementById("respuesta_" + id);
   if (!contenedor) return;
   contenedor.innerHTML = "";
-
   const claves = Array.from(formData.keys());
   if (claves.length === 0) {
     contenedor.appendChild(errorDeFormulario("modificar"));
     return;
   }
-
   const datosOriginales = filtrarDatos(formData, data);
-
   if (datosOriginales.length === 0) {
     const p = document.createElement("p");
     p.classList.add("error");
@@ -370,98 +371,107 @@ const procesarModificacion = (
     contenedor.appendChild(p);
     return;
   }
-
   const nuevoObjeto: any = {};
   claves.forEach((key) => {
     nuevoObjeto[key] = formData.get(key);
   });
-
   const clavesFiltro = claves.filter(
     (k) => k.startsWith("id") || k.toLowerCase().startsWith("limite")
   );
-
   const tituloOriginal = document.createElement("h3");
   tituloOriginal.textContent = "Datos originales";
   contenedor.appendChild(tituloOriginal);
-
   contenedor.appendChild(
     crearTabla("modificar", datosOriginales, clavesFiltro)
   );
-
   const tituloNuevo = document.createElement("h3");
   tituloNuevo.textContent = "Datos nuevos";
   contenedor.appendChild(tituloNuevo);
-
   contenedor.appendChild(crearTabla("modificar", [nuevoObjeto], []));
-
   const mensaje = document.createElement("p");
   mensaje.classList.add("exito");
   mensaje.textContent = "El elemento fue modificado correctamente.";
   contenedor.appendChild(mensaje);
 };
 
-// Filtra datos del JSON según el campo ID enviado en el formDate y un límite opcional.
+//Filtra datos por ID y límite opcional obtenido desde el formulario.
 const filtrarDatos = (formData: FormData, data: any[]): any[] => {
-  const campoID = Array.from(formData.keys()).find((key) =>
-    key.startsWith("id")
+  const campoID = Array.from(formData.keys()).find(
+    (key) => key.toLowerCase() === "id"
   );
-
-  if (!campoID) return [];
-
-  const valorID = Number(formData.get(campoID));
-  if (isNaN(valorID)) return [];
+  const valorID = campoID ? Number(formData.get(campoID)) : null;
 
   const campoLimite = Array.from(formData.keys()).find((key) =>
     key.toLowerCase().startsWith("limite")
   );
 
-  const limite = campoLimite ? Number(formData.get(campoLimite)) : 1;
+  const limite = campoLimite ? Number(formData.get(campoLimite)) : data.length;
 
-  const resultados = data.filter((item) => Number(item[campoID]) === valorID);
+  let resultados = data;
+
+  if (valorID !== null && !isNaN(valorID)) {
+    resultados = resultados.filter(
+      (item) => Number(item[campoID!]) === valorID
+    );
+  }
+
   return resultados.slice(0, limite);
 };
 
-// Determina si un registro ya existe comparando campos que deben tener valores unicos y comienzan con "nombre".
+//Determina si ya existe un registro con un campo único que empiece con "nombre".
 const registroExistente = (formData: FormData, data: any[]): boolean => {
   const campoNombre = Array.from(formData.keys()).find((key) =>
     key.startsWith("nombre")
   );
-
   if (!campoNombre) return false;
-
   const valorNombre = formData.get(campoNombre);
   if (!valorNombre) return false;
-
   const encontrado = data.some(
     (item) =>
       String(item[campoNombre]).toLowerCase() ===
       String(valorNombre).toLowerCase()
   );
-
   return encontrado;
 };
 
-// Crea un mensaje de error para indicar que no se seleccionó ningún campo.
+//Muestra un mensaje de error formateado con Bootstrap.
 const errorDeFormulario = (accion: string): HTMLElement => {
-  const p = document.createElement("p");
-  p.classList.add("error");
-  p.textContent = `No se seleccionó ningún campo para ${accion}.`;
-  return p;
+  const div = document.createElement("div");
+  div.className = "alert alert-danger mt-2";
+  div.textContent = `No se seleccionó ningún campo para ${accion}.`;
+  return div;
 };
 
-// Crea una tabla HTML basada en una lista de objetos JSON con sus claves y valores asociados.
+//Crea una tabla HTML dinamicamente con los datos proporcionados.
 const crearTabla = (
   titulo: string,
   data: any[],
   clavesFiltro: string[] = []
-): HTMLTableElement => {
+): HTMLElement => {
+  const wrapper = document.createElement("div");
+
+  const h3 = document.createElement("h3");
+  h3.textContent = titulo;
+  h3.className = "mb-3 text-center text-capitalize";
+  wrapper.appendChild(h3);
+
+  const responsiveDiv = document.createElement("div");
+  responsiveDiv.className = "table-responsive";
+
   const tabla = document.createElement("table");
-  const caption = document.createElement("caption");
+  tabla.className =
+    "table table-striped table-bordered text-center align-middle w-100";
+  // ⬆ w-100 asegura responsividad
 
-  caption.textContent = titulo;
-  tabla.appendChild(caption);
+  // ❌ Eliminado: rompía el responsive
+  // tabla.style.width = "max-content";
+  // tabla.style.minWidth = "600px";
 
-  if (!data || data.length === 0) return tabla;
+  if (!data || data.length === 0) {
+    responsiveDiv.appendChild(tabla);
+    wrapper.appendChild(responsiveDiv);
+    return wrapper;
+  }
 
   let columnas = Object.keys(data[0]);
   columnas = columnas.filter((c) => !clavesFiltro.includes(c));
@@ -485,7 +495,19 @@ const crearTabla = (
 
     columnas.forEach((col) => {
       const td = document.createElement("td");
-      td.textContent = item[col] ?? "—";
+
+      if (col.toLowerCase() === "imagen") {
+        const img = document.createElement("img");
+        img.src = item[col];
+        img.alt = "imagen";
+        img.style.maxWidth = "80px";
+        img.style.height = "auto";
+        img.style.border = "1px solid black";
+        td.appendChild(img);
+      } else {
+        td.textContent = item[col] ?? "—";
+      }
+
       tr.appendChild(td);
     });
 
@@ -493,14 +515,16 @@ const crearTabla = (
   });
 
   tabla.appendChild(tbody);
+  responsiveDiv.appendChild(tabla);
+  wrapper.appendChild(responsiveDiv);
 
-  return tabla;
+  return wrapper;
 };
 
-// Carga un archivo JSON desde la carpeta /data y lo retorna como una promesa.
+//Obtiene la información de un archivo.json y retorna su contenido en un objeto Promise
 const getJson = async (nombreArchivo: string): Promise<any> => {
   try {
-    const response = await fetch(`../../data/${nombreArchivo}`);
+    const response = await fetch(`../../src/data/${nombreArchivo}`);
     if (!response.ok) throw new Error(`No se pudo cargar ${nombreArchivo}`);
     return await response.json();
   } catch (error) {
@@ -508,4 +532,3 @@ const getJson = async (nombreArchivo: string): Promise<any> => {
     return null;
   }
 };
-*/

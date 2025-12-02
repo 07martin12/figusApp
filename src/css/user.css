@@ -1,4 +1,4 @@
-body {
+main {
   background-image: url("../../assets/img/fondos/fondoEstadioDesktop.png");
   background-position: center;
   background-size: cover;
@@ -31,4 +31,75 @@ button img {
 
 button img:hover {
   transform: scale(1.2);
+}
+
+.sidebar-toggle-btn {
+  display: none;
+}
+
+.card button:not(#btn-delete-account) {
+  background-color: #f8f9fa;
+}
+
+@media (max-width: 360px) {
+  #toggleSidebar {
+    display: block;
+    position: fixed;
+    left: 10px;
+    top: 90px;
+    background: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .sidebar-width {
+    position: fixed;
+    top: 80px;
+    height: 100vh;
+    background: #fff;
+    transform: translateX(-100%);
+    overflow-y: auto;
+    z-index: 2;
+  }
+
+  .flex-grow-1 h2,
+  .flex-grow-1 p {
+    text-align: center;
+  }
+
+  .sidebar-width {
+    transform: translateX(-250px);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar-width.sidebar-open {
+    transform: translateX(0);
+  }
+
+  main {
+    background-image: url("../../assets/img/fondos/fondoEstadioMobile.png");
+    background-repeat: repeat;
+  }
+
+  .flex-grow-1 {
+    margin-top: 15%;
+  }
+
+  .block {
+    display: block !important;
+  }
+
+  .block input,
+  .block select {
+    margin-bottom: 2%;
+  }
+
+  #btn-update-dob {
+    margin-top: 12%;
+  }
 }

@@ -1,7 +1,8 @@
 <div class="card bg-light border rounded p-4 mb-4">
   <h5 class="card-title mb-3">Agregar Álbum</h5>
   <p class="card-text mb-3">
-    Se pueden agregar álbumes indicando país, tipo, precio, stock e imagen.
+    Se pueden agregar álbumes indicando país, tipo, nombre, precio, stock e
+    imagen.
   </p>
 
   <form name="agregar_album" class="form_alta">
@@ -21,6 +22,17 @@
         name="clase"
         class="form-select w-100 cls_album"
       ></select>
+    </div>
+
+    <div class="mb-3">
+      <label for="inputNombreAlbum" class="form-label">Nombre del álbum</label>
+      <input
+        type="text"
+        id="inputNombreAlbum"
+        name="nombre"
+        class="form-control w-100"
+        required
+      />
     </div>
 
     <div class="mb-3">

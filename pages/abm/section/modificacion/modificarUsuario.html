@@ -20,7 +20,7 @@
 
     <div class="mb-3">
       <label for="inputModificarNombreUsuario" class="form-label"
-        >Nombre de usuario</label
+        >Nuevo nombre de usuario</label
       >
       <input
         type="text"
@@ -33,7 +33,9 @@
     </div>
 
     <div class="mb-3">
-      <label for="inputModificarPassword" class="form-label">Contraseña</label>
+      <label for="inputModificarPassword" class="form-label"
+        >Nueva contraseña</label
+      >
       <input
         type="password"
         id="inputModificarPassword"
@@ -46,7 +48,7 @@
 
     <div class="mb-3">
       <label for="inputModificarEmail" class="form-label"
-        >Correo electrónico</label
+        >Nuevo correo electrónico</label
       >
       <input
         type="email"
@@ -60,7 +62,7 @@
 
     <div class="mb-3">
       <label for="inputModificarTelefono" class="form-label"
-        >Número de teléfono</label
+        >Nuevo número de teléfono</label
       >
       <input
         type="tel"
@@ -73,7 +75,9 @@
     </div>
 
     <div class="mb-3">
-      <label for="selectModificarPais" class="form-label">País de origen</label>
+      <label for="selectModificarPais" class="form-label"
+        >Nuevo país de origen</label
+      >
       <select
         id="selectModificarPais"
         name="pais"
@@ -83,7 +87,7 @@
 
     <div class="mb-3">
       <label for="inputModificarFechaNacimiento" class="form-label"
-        >Fecha de nacimiento</label
+        >Nueva fecha de nacimiento</label
       >
       <input
         type="date"
@@ -91,12 +95,14 @@
         name="fechaNacimiento"
         class="form-control w-100"
         required
+        min="1875-12-02"
+        max="2013-12-02"
       />
     </div>
 
     <div class="mb-3">
       <label for="inputModificarFotoPerfil" class="form-label"
-        >Foto de perfil nueva</label
+        >Nueva foto de perfil</label
       >
       <input
         type="file"

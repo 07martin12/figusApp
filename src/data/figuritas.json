@@ -1,62 +1,452 @@
 [
   {
     "id": 1,
-    "idSobre": 1,
-    "nombre": "Lionel Messi",
-    "pais": "Argentina",
-    "claseFigurita": "Legendaria",
-    "precio": 500,
-    "stock": 10,
-    "imagen": "/imagenes/messi.jpg"
-  },
-  {
-    "id": 2,
     "idSobre": 2,
-    "nombre": "Ángel Di María",
+    "nombre": "Lionel Messi",
     "pais": "Argentina",
     "claseFigurita": "Especial",
     "precio": 300,
+    "stock": 10,
+    "imagen": "../../assets/img/fondos/Argentina/1.jpg"
+  },
+  {
+    "id": 2,
+    "idSobre": 1,
+    "nombre": "Enzo Fernandez",
+    "pais": "Argentina",
+    "claseFigurita": "Comun",
+    "precio": 100,
     "stock": 15,
-    "imagen": "/imagenes/di_maria.jpg"
+    "imagen": "../../assets/img/fondos/Argentina/2.jpg"
   },
   {
     "id": 3,
-    "idSobre": 3,
-    "nombre": "Rodrigo De Paul",
+    "idSobre": 1,
+    "nombre": "Marcos Acuna",
     "pais": "Argentina",
     "claseFigurita": "Comun",
     "precio": 100,
     "stock": 20,
-    "imagen": "/imagenes/de_paul.jpg"
+    "imagen": "../../assets/img/fondos/Argentina/3.jpg"
   },
   {
     "id": 4,
     "idSobre": 1,
-    "nombre": "Sergio Ramos",
-    "pais": "España",
-    "claseFigurita": "Legendaria",
-    "precio": 450,
+    "nombre": "Julian Alvarez",
+    "pais": "Argentina",
+    "claseFigurita": "Comun",
+    "precio": 100,
     "stock": 8,
-    "imagen": "/imagenes/ramos.jpg"
+    "imagen": "../../assets/img/fondos/Argentina/4.jpg"
   },
   {
     "id": 5,
-    "idSobre": 2,
-    "nombre": "Lamine Yamal",
-    "pais": "España",
-    "claseFigurita": "Especial",
-    "precio": 350,
+    "idSobre": 1,
+    "nombre": "Rodrigo de Paul",
+    "pais": "Argentina",
+    "claseFigurita": "Comun",
+    "precio": 100,
     "stock": 12,
-    "imagen": "/imagenes/yamal.jpg"
+    "imagen": "../../assets/img/fondos/Argentina/5.jpg"
   },
   {
     "id": 6,
-    "idSobre": 3,
-    "nombre": "Sergio Busquets",
-    "pais": "España",
+    "idSobre": 1,
+    "nombre": "Nahuel Molina",
+    "pais": "Argentina",
     "claseFigurita": "Comun",
-    "precio": 120,
+    "precio": 100,
     "stock": 18,
-    "imagen": "/imagenes/busquets.jpg"
+    "imagen": "../../assets/img/fondos/Argentina/6.jpg"
+  },
+  {
+    "id": 7,
+    "idSobre": 1,
+    "nombre": "Alexis Mac Allister",
+    "pais": "Argentina",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 13,
+    "imagen": "../../assets/img/fondos/Argentina/7.jpg"
+  },
+  {
+    "id": 8,
+    "idSobre": 1,
+    "nombre": "Cuti Romero",
+    "pais": "Argentina",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 12,
+    "imagen": "../../assets/img/fondos/Argentina/8.jpg"
+  },
+  {
+    "id": 9,
+    "idSobre": 1,
+    "nombre": "Lisandro Martinez",
+    "pais": "Argentina",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 11,
+    "imagen": "../../assets/img/fondos/Argentina/9.jpg"
+  },
+  {
+    "id": 10,
+    "idSobre": 1,
+    "nombre": "Nicolas Otamendi",
+    "pais": "Argentina",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 20,
+    "imagen": "../../assets/img/fondos/Argentina/10.jpg"
+  },
+  {
+    "id": 11,
+    "idSobre": 1,
+    "nombre": "Emiliano Martinez",
+    "pais": "Argentina",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 14,
+    "imagen": "../../assets/img/fondos/Argentina/11.jpg"
+  },
+  {
+    "id": 12,
+    "idSobre": 1,
+    "nombre": "Pelota seleccion Argentina",
+    "pais": "Argentina",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 16,
+    "imagen": "../../assets/img/fondos/Argentina/pelota.jpg"
+  },
+  {
+    "id": 13,
+    "idSobre": 1,
+    "nombre": "Hinchada Argentina",
+    "pais": "Argentina",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 9,
+    "imagen": "../../assets/img/fondos/Argentina/hinchada.jpg"
+  },
+  {
+    "id": 14,
+    "idSobre": 1,
+    "nombre": "Copa Mundial 2022",
+    "pais": "Argentina",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 9,
+    "imagen": "../../assets/img/fondos/Argentina/copa.jpg"
+  },
+  {
+    "id": 15,
+    "idSobre": 3,
+    "nombre": "Diego Armando Maradona",
+    "pais": "Argentina",
+    "claseFigurita": "Leyenda",
+    "precio": 500,
+    "stock": 4,
+    "imagen": "../../assets/img/fondos/Argentina/15.jpg"
+  },
+  {
+    "id": 16,
+    "idSobre": 1,
+    "nombre": "Lucas Paqueta",
+    "pais": "Brasil",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 10,
+    "imagen": "../../assets/img/fondos/Brasil/1.jpg"
+  },
+  {
+    "id": 17,
+    "idSobre": 1,
+    "nombre": "Raphinha",
+    "pais": "Brasil",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 15,
+    "imagen": "../../assets/img/fondos/Brasil/2.jpg"
+  },
+  {
+    "id": 18,
+    "idSobre": 1,
+    "nombre": "Vinicius Jr",
+    "pais": "Brasil",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 20,
+    "imagen": "../../assets/img/fondos/Brasil/3.jpg"
+  },
+  {
+    "id": 19,
+    "idSobre": 1,
+    "nombre": "Eder Militao",
+    "pais": "Brasil",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 8,
+    "imagen": "../../assets/img/fondos/Brasil/4.jpg"
+  },
+  {
+    "id": 20,
+    "idSobre": 1,
+    "nombre": "Endrick",
+    "pais": "Brasil",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 12,
+    "imagen": "../../assets/img/fondos/Brasil/5.jpg"
+  },
+  {
+    "id": 21,
+    "idSobre": 1,
+    "nombre": "Rodrygo",
+    "pais": "Brasil",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 18,
+    "imagen": "../../assets/img/fondos/Brasil/6.jpg"
+  },
+  {
+    "id": 22,
+    "idSobre": 1,
+    "nombre": "Alisson Becker",
+    "pais": "Brasil",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 18,
+    "imagen": "../../assets/img/fondos/Brasil/7.jpg"
+  },
+  {
+    "id": 23,
+    "idSobre": 1,
+    "nombre": "Danilo Luiz da Silva",
+    "pais": "Brasil",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 13,
+    "imagen": "../../assets/img/fondos/Brasil/8.jpg"
+  },
+  {
+    "id": 24,
+    "idSobre": 1,
+    "nombre": "Bruno Guimarães",
+    "pais": "Brasil",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 12,
+    "imagen": "../../assets/img/fondos/Brasil/9.jpg"
+  },
+  {
+    "id": 25,
+    "idSobre": 1,
+    "nombre": "Richarlison de Andrade",
+    "pais": "Brasil",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 11,
+    "imagen": "../../assets/img/fondos/Brasil/10.png"
+  },
+  {
+    "id": 26,
+    "idSobre": 2,
+    "nombre": "Neymar da Silva Santos Júnior",
+    "pais": "Brasil",
+    "claseFigurita": "Especial",
+    "precio": 300,
+    "stock": 20,
+    "imagen": "../../assets/img/fondos/Brasil/11.jpg"
+  },
+  {
+    "id": 27,
+    "idSobre": 1,
+    "nombre": "Escudo seleccion Brasil",
+    "pais": "Brasil",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 14,
+    "imagen": "../../assets/img/fondos/Brasil/escudo.jpg"
+  },
+  {
+    "id": 28,
+    "idSobre": 1,
+    "nombre": "Hinchada Brasileña",
+    "pais": "Brasil",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 16,
+    "imagen": "../../assets/img/fondos/Brasil/hinchada.jpg"
+  },
+  {
+    "id": 29,
+    "idSobre": 1,
+    "nombre": "Copa Mundial 2022",
+    "pais": "Brasil",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 9,
+    "imagen": "../../assets/img/fondos/Brasil/copa.jpg"
+  },
+  {
+    "id": 30,
+    "idSobre": 3,
+    "nombre": "Pele",
+    "pais": "Brasil",
+    "claseFigurita": "Leyenda",
+    "precio": 500,
+    "stock": 9,
+    "imagen": "../../assets/img/fondos/Brasil/15.jpg"
+  },
+  {
+    "id": 31,
+    "idSobre": 1,
+    "nombre": "Youssouf Fofana",
+    "pais": "Francia",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 10,
+    "imagen": "../../assets/img/fondos/Francia/1.jpg"
+  },
+  {
+    "id": 32,
+    "idSobre": 1,
+    "nombre": "Mattéo Guendouzi",
+    "pais": "Francia",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 8,
+    "imagen": "../../assets/img/fondos/Francia/2.jpg"
+  },
+  {
+    "id": 33,
+    "idSobre": 1,
+    "nombre": "Vitinha",
+    "pais": "Francia",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 8,
+    "imagen": "../../assets/img/fondos/Francia/3.jpg"
+  },
+  {
+    "id": 34,
+    "idSobre": 1,
+    "nombre": "Aurélien Tchouaméni",
+    "pais": "Francia",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 10,
+    "imagen": "../../assets/img/fondos/Francia/4.jpg"
+  },
+  {
+    "id": 35,
+    "idSobre": 1,
+    "nombre": "Eduardo Camavinga",
+    "pais": "Francia",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 14,
+    "imagen": "../../assets/img/fondos/Francia/5.jpg"
+  },
+  {
+    "id": 36,
+    "idSobre": 1,
+    "nombre": "Axel Disasi",
+    "pais": "Francia",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 12,
+    "imagen": "../../assets/img/fondos/Francia/6.jpg"
+  },
+  {
+    "id": 37,
+    "idSobre": 2,
+    "nombre": "Kylian Mbappé",
+    "pais": "Francia",
+    "claseFigurita": "Especial",
+    "precio": 300,
+    "stock": 6,
+    "imagen": "../../assets/img/fondos/Francia/7.jpg"
+  },
+  {
+    "id": 38,
+    "idSobre": 1,
+    "nombre": "Ibrahima Konaté",
+    "pais": "Francia",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 10,
+    "imagen": "../../assets/img/fondos/Francia/8.jpg"
+  },
+  {
+    "id": 39,
+    "idSobre": 1,
+    "nombre": "Kingsley Coman",
+    "pais": "Francia",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 15,
+    "imagen": "../../assets/img/fondos/Francia/9.jpg"
+  },
+  {
+    "id": 40,
+    "idSobre": 1,
+    "nombre": "Steve Mandanda",
+    "pais": "Francia",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 19,
+    "imagen": "../../assets/img/fondos/Francia/10.jpg"
+  },
+  {
+    "id": 41,
+    "idSobre": 1,
+    "nombre": "Varane",
+    "pais": "Francia",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 7,
+    "imagen": "../../assets/img/fondos/Francia/11.jpg"
+  },
+  {
+    "id": 42,
+    "idSobre": 1,
+    "nombre": "Camiseta de Francia",
+    "pais": "Francia",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 10,
+    "imagen": "../../assets/img/fondos/Francia/Camiseta.jpg"
+  },
+  {
+    "id": 43,
+    "idSobre": 1,
+    "nombre": "Hinchada Francesa",
+    "pais": "Francia",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 7,
+    "imagen": "../../assets/img/fondos/Francia/hinchada.jpg"
+  },
+  {
+    "id": 44,
+    "idSobre": 1,
+    "nombre": "Copa Mundial 2022",
+    "pais": "Francia",
+    "claseFigurita": "Comun",
+    "precio": 100,
+    "stock": 20,
+    "imagen": "../../assets/img/fondos/Francia/copa.jpg"
+  },
+  {
+    "id": 45,
+    "idSobre": 3,
+    "nombre": "Zinedine Zidane",
+    "pais": "Francia",
+    "claseFigurita": "Leyenda",
+    "precio": 500,
+    "stock": 5,
+    "imagen": "../../assets/img/fondos/Francia/15.jpg"
   }
 ]

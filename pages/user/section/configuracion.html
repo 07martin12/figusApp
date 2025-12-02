@@ -1,7 +1,7 @@
 <div>
   <div class="mb-4">
     <h2>Datos de usuario</h2>
-    <p class="text-muted">
+    <p>
       Gestiona tu información, la privacidad y la seguridad para mejorar tu
       experiencia en FigurApp.
     </p>
@@ -66,14 +66,16 @@
 
     <div class="mb-3">
       <label class="form-label">Fecha de nacimiento</label>
-      <div class="d-flex gap-2 align-items-center">
-        <input type="date" id="inputDob" class="form-control flex-grow-1" />
-        <button id="btn-update-dob" title="Modificar">
-          <img
-            src="../../assets/img/icons/btn_actualizar.png"
-            alt="Actualizar"
-          />
-        </button>
+      <div class="d-flex gap-2 align-items-center block">
+       
+          <input type="date" id="inputDob" class="form-control flex-grow-1" />
+          <button id="btn-update-dob" title="Modificar">
+            <img
+              src="../../assets/img/icons/btn_actualizar.png"
+              alt="Actualizar"
+            />
+          </button>
+       
       </div>
       <div id="status-dob" class="mt-2 small text-muted"></div>
     </div>
@@ -82,34 +84,37 @@
 
     <div class="mb-3">
       <label class="form-label">Contraseña</label>
-      <div class="d-flex gap-2 align-items-center">
+      <div class="d-flex gap-2 align-items-center block">
         <input
           type="password"
           id="inputPass1"
           class="form-control"
           placeholder="Nueva contraseña"
         />
-        <input
-          type="password"
-          id="inputPass2"
-          class="form-control"
-          placeholder="Confirmar nueva contraseña"
-        />
-        <button id="btn-update-pass" title="Modificar contraseña">
-          <img
-            src="../../assets/img/icons/btn_actualizar.png"
-            alt="Actualizar contraseña"
+        <div class="d-flex">
+          <input
+            type="password"
+            id="inputPass2"
+            class="form-control"
+            placeholder="Confirmar nueva contraseña"
           />
-        </button>
+          <button id="btn-update-pass" title="Modificar contraseña">
+            <img
+              src="../../assets/img/icons/btn_actualizar.png"
+              alt="Actualizar contraseña"
+            />
+          </button>
+        </div>
       </div>
+
       <div id="status-pass" class="mt-2 small text-muted"></div>
     </div>
 
     <hr />
 
     <div class="mb-3">
-      <label class="form-label">Eliminar cuenta</label>
-      <div class="d-flex gap-2 align-items-center">
+      <div><label class="form-label">Eliminar cuenta</label></div>
+      <div class="d-flex align-items-center block">
         <select id="select-delete-reason" class="form-select flex-grow-1">
           <option value="" selected disabled>
             Selecciona el motivo de eliminación

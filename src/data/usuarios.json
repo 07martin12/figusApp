@@ -8,11 +8,11 @@
     "pais": "Argentina",
     "fechaNacimiento": "2000-03-15",
     "rol": "admin",
-    "fotoPerfil": "../../assets/img/users/administrador.png"
+    "imagen": "../../assets/img/icons/fotoPerfilDefault.png"
   },
   {
     "id": 2,
-    "nombreUsuario": "manual",
+    "nombreUsuario": "manuel",
     "password": "manual123",
     "email": "manual@gmail.com",
     "telefono": "5491191234567",

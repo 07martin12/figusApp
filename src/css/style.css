@@ -119,4 +119,14 @@ input::placeholder {
   .dropdown-menu {
     width: 100% !important;
   }
+
+  footer,
+  footer h6 {
+    text-align: center;
+  }
+
+  footer .d-flex,
+  footer .row.g-0 {
+    justify-content: center !important;
+  }
 }
