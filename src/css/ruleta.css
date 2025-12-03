@@ -7,7 +7,7 @@ main .container-fluid {
 }
 
 #autoGiro {
-  background-color: #4E5256;
+  background-color: #4e5256;
 }
 
 main .position-relative {
@@ -35,19 +35,6 @@ main .ruleta-container .ruleta {
   display: block;
   transform-origin: 50% 50%;
   margin-bottom: 15%;
-}
-
-.ruleta.girar {
-  animation: girarRuleta 3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
-}
-
-@keyframes girarRuleta {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(1080deg);
-  }
 }
 
 .btn-custom {
@@ -100,19 +87,9 @@ main .btn-dark-custom:active {
   position: relative;
   bottom: 27%;
   right: 0;
-}
-
-.premios-circle.girar {
-  animation: girarCircle 3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
-}
-
-@keyframes girarCircle {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(1080deg);
-  }
+  transition: transform 3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform;
+  transform: rotate(20deg);
 }
 
 .premios-circle .premio {
@@ -174,4 +151,39 @@ main button:hover {
   z-index: 4;
   top: 15%;
   left: 60%;
+}
+
+.ruleta {
+  transform: rotate(20deg);
+  transition: transform 3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform;
+}
+
+.premio-popup {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.premio-popup img {
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.6));
+}
+
+@media (max-width: 360px) {
+  .d-flex.flex-column > div {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .d-flex.flex-column > div > button {
+    flex: 1;
+    margin-top: 0;
+  }
+
+  .d-flex .flex-column {
+    position: absolute;
+    margin-top: 80%;
+  }
 }
