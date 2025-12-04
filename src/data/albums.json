@@ -6,7 +6,7 @@
     "pais": "Argentina",
     "precio": 1500,
     "stock": 25,
-    "imagen": "../../assets/img/fondos/Argentina/AlbumArgentina.png"
+    "imagen": "../../assets/img/fondos/album_argentina.png"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "pais": "Brasil",
     "precio": 1200,
     "stock": 30,
-    "imagen": "../../assets/img/fondos/Brasil/AlbumBrasil.png"
+    "imagen": "../../assets/img/fondos/album_brasil.png"
   },
   {
     "id": 3,
@@ -24,6 +24,6 @@
     "pais": "Francia",
     "precio": 900,
     "stock": 40,
-    "imagen": "../../assets/img/fondos/Francia/AlbumFrancia.png"
+    "imagen": "../../assets/img/fondos/album_francia.png"
   }
 ]

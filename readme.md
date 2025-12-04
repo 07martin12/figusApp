@@ -1,3 +1,7 @@
+explicacion del home y del nav
+
+
+
 # Ruleta Dinámica de Premios
 
 > Ruleta de premios para obtener recompensas aleatorias.

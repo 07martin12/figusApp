@@ -96,6 +96,29 @@ input::placeholder {
   cursor: pointer;
 }
 
+#carruselFigus {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#carruselFigus .carousel-item img {
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8%;
+}
+
 @media (max-width: 360px) {
   .navbar {
     padding-left: 1rem;
@@ -128,5 +151,9 @@ input::placeholder {
   footer .d-flex,
   footer .row.g-0 {
     justify-content: center !important;
+  }
+
+  #carruselFigus .carousel-item img {
+    height: 250px;
   }
 }

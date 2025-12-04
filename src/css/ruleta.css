@@ -1,9 +1,22 @@
+main {
+  background-image: none;
+}
+
 main .container-fluid {
   background-image: url("../../assets/img/fondos/fondoEstadioDesktop.png");
   background-repeat: repeat;
   background-position: center;
   background-size: cover;
   padding: 10px;
+}
+
+h2 {
+  font-weight: 600 !important;
+}
+
+p {
+  font-weight: 500 !important;
+  font-size: 18px;
 }
 
 #autoGiro {
@@ -186,5 +199,35 @@ main button:hover {
   .d-flex .flex-column {
     position: absolute;
     margin-top: 80%;
+  }
+
+  main .ruleta-container {
+    position: relative;
+    left: 0%;
+  }
+
+  .contenedorPrincipal {
+    margin-right: 20%;
+    margin-bottom: 31%;
+  }
+
+  .align-items-stretch {
+    padding-top: 12%;
+    margin-right: 15%;
+  }
+
+  .botonPrincipal {
+    position: relative;
+    top: 100px;
+  }
+
+  #sinGiros {
+    position: relative;
+    top: 90px;
+  }
+
+  .premio-popup {
+    top: 40%;
+    left: 50%;
   }
 }
